@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=DynaPuff:wght@700&display=swap');
+
+*{ /*redefinindo todos os elementos da página*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+body{
+    background-image: linear-gradient(to bottom, #000000, #000000, #030303, #1f1f1b, #b00f0f);
+    min-height: 100vh;  
+}
+header{    
+    backdrop-filter: blur(8px);
+}
+nav{    
+    display: flex;    
+    justify-content: space-around;
+    align-items: center;   
+    height: 8vh;
+    z-index: 99;      
+    border-bottom: 1px solid #30292F;  
+}
+a{
+    color: #fff;
+    text-decoration: none;   
+}
+
+.menu{    
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    font-family: 'Bebas Neue', cursive; 
+}
+.menu li{
+    text-transform: uppercase;    
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-left: 30px;   
+} /* ================================= FINAL HEADER ================================== */
+
+.Contato{
+    font-family: 'Zeyada', cursive;
+    font-size: 50px;
+    margin-left: 35rem;
+    margin-top: 18PX; 
+    margin-bottom: 5px;
+    color: white;
+   display: inline-table;
+  
+    
+   
+}
+
+.conteudo a {
+
+    color:yellow;
+    text-decoration: none;
+
+}
+
+.conteudo iframe{
+
+    margin-top: 50PX; 
+
+}

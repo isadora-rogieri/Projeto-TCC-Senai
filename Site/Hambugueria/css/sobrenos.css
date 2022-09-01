@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=DynaPuff:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&display=swap');
+*{ /*redefinindo todos os elementos da página*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+body{
+    background-image: linear-gradient(to bottom, #3f4045, #3b3a40, #37343b, #332f35, #b00f0f);
+    min-height: 100vh;  
+}
+
+header{    
+    backdrop-filter: blur(8px);
+}
+nav{    
+    display: flex;
+    /*background: #30292F;*/
+    justify-content: space-around;
+    align-items: center;   
+    height: 8vh;
+    z-index: 99;      
+    border-bottom: 1px solid #30292F;  
+}
+a{
+    color: #fff;
+    text-decoration: none;   
+}
+.menu{    
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    font-family: 'Bebas Neue', cursive; 
+}
+.menu li{
+    text-transform: uppercase;    
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-left: 30px;   
+} /* ================================= FINAL HEADER ================================== */
+
+.conteudo{
+    display: flex;
+    width: 100%;
+    height: 92vh;
+    justify-content: center;
+    align-items: center;     
+    text-align: left;
+    z-index: 99;
+}
+.texto-1{   
+    width: 35%;
+}
+.texto-1 h4{    
+display: flex;
+font-size: 2rem;
+color: rgb(253, 122, 0);
+margin-bottom: 1rem;
+font-family: 'Bebas Neue', cursive;
+}
+.texto-1 p{
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600; 
+    letter-spacing: 1px;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+.imagem-2 {
+width: 50vh;
+height: 50vh;
+margin-left: 10rem;
+}
+.imagem-2 img{
+width: 50vh;
+height: 50vh;
+border-radius: 25px;
+border: 1px solid whitesmoke;
+}

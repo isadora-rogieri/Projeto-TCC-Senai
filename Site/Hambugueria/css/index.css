@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=DynaPuff:wght@700&display=swap');
+
+*{ /*redefinindo todos os elementos da página*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+section {
+    background-color: aqua;
+    width: 1200px;
+}
+
+@media (max-width:1200px) {
+   section {
+    width: 1100px;
+    padding: 0;
+   }
+    }
+
+body{
+    background-image: linear-gradient(to bottom, #3f4045, #3b3a40, #37343b, #332f35, #30292f);
+    min-height: 100vh;  
+}
+header{    
+    backdrop-filter: blur(8px);
+}
+nav{    
+    display: flex;
+    /*background: #30292F;*/
+    justify-content: space-around;
+    align-items: center;   
+    height: 8vh;
+    z-index: 99;      
+    border-bottom: 1px solid #30292F;  
+}
+a{
+    color: #fff;
+    text-decoration: none;   
+}
+.menu{    
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    font-family: 'Bebas Neue', cursive; 
+}
+.menu li{
+    text-transform: uppercase;    
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-left: 30px;   
+} /* ================================= FINAL HEADER ================================== */
+
+main{ /* ================================= COMEÇO CONTEÚDO ================================== */
+    display: flex;   
+}
+.conteudo{
+    display: flex;
+    width: 100%;
+    height: 92vh;
+    justify-content: center;
+    align-items: center;     
+}
+.texto-1{   
+    width: 30%;
+}
+.texto-1 h4{    
+display: flex;
+font-size: 2rem;
+color: rgb(253, 122, 0);
+margin-bottom: 1rem;
+font-family: 'Bebas Neue', cursive;
+}
+.texto-1 h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+    color: #fff;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+}
+.texto-1 p{
+    margin-bottom: 4rem;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 400;
+    /* font-family: 'Zeyada', cursive; */
+    font-family: 'Dancing Script', cursive;
+}
+.aplicativo{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    color: #fff;   
+}
+.app{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    padding: 10px;
+    border-bottom: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-radius: 10px;  
+}
+.app img{
+    margin-left: 5px;
+    width: 30px;    
+}
+.google{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    padding: 10px;
+    border-bottom: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    border-radius: 10px;  
+}
+.google img{
+    margin-left: 5px;
+    width: 30px;
+}
+
+/*@media screen and (max-width:768px) {
+   header {
+    width: 100%;
+    padding: 0;
+   }
+    }
+@media screen and (max-width:600px) {
+    nav li {
+       float: none;
+       text-align:center;
+       width:100%;
+    }
+     footer p {
+        display: none;
+     }
+   }*/
