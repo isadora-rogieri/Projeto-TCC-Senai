@@ -10,12 +10,12 @@ import lombok.Setter;
 public class ItemPedidoDto {
 
     protected Integer id;
-    protected Integer quantity;
+    protected Integer quantidade;
     protected Produto produto;
 
     public ItemPedidoDto(Pedido pedido){
         this.id = pedido.getId();
-        this.quantity = pedido.getQuantidade();
+        this.quantidade = pedido.getQuantidade();
         this.setProduto(pedido.getProduto());
 
     }
