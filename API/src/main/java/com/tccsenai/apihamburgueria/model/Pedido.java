@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -18,12 +20,12 @@ public class Pedido {
     protected Integer id;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Usuario_id",referencedColumnName = "id")
-    protected Usuario cliente;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ItemPedido_id",referencedColumnName = "id")
-    protected List<ItemPedido> itens;
+    protected Usuario usuario;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "produto_id",referencedColumnName = "id")
+    protected Produto produto;
     @Column(nullable = false)
-    protected OffsetDateTime data;
+    protected LocalDate data;
     @Column(nullable = false)
-    protected BigDecimal valorTotal;
+    protected int quantidade;
 }

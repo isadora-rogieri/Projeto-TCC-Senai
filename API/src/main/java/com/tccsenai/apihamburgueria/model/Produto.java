@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -29,7 +30,7 @@ public class Produto implements Serializable {
 
     @Column(nullable = false)
     @NotNull(message = "Preço obrigatório")
-    protected double preco;
+    protected BigDecimal preco;
 
     protected String caminhoImagem;
 
