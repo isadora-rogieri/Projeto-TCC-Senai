@@ -35,6 +35,7 @@ public class PedidoService {
 
         pedidoRepository.save(pedido);
     }
+
     public PedidoDto listPedidosItems(Usuario cliente) {
         List<Pedido> pedidoList = pedidoRepository.findAllByUsuario(cliente);
 
@@ -42,7 +43,7 @@ public class PedidoService {
         BigDecimal valorTotal = BigDecimal.ZERO;
         for (Pedido itemPedido: pedidoList) {
             ItemPedidoDto itemPedidoDto = new ItemPedidoDto(itemPedido);
-            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(itemPedido.getProduto().getPreco());
+            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(itemPedido.getProduto().getPreco()).add(valorTotal);
 
             pedidoItens.add(itemPedidoDto);
         }
@@ -57,6 +58,28 @@ public class PedidoService {
         List<Pedido> pedidoList = pedidoRepository.findAll();
 
         return  pedidoList;
+    }
+
+    public PedidoDto getItemsPedido(Pedido pedido) {
+        List<Pedido> pedidoList = pedidoRepository.findAllById(pedido.getId());
+
+        List<ItemPedidoDto> pedidoItens = new ArrayList<>();
+        BigDecimal valorTotal = BigDecimal.ZERO;
+        for (Pedido itemPedido: pedidoList) {
+            ItemPedidoDto itemPedidoDto = new ItemPedidoDto(itemPedido);
+            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(itemPedido.getProduto().getPreco()).add(valorTotal);
+
+            pedidoItens.add(itemPedidoDto);
+        }
+
+        PedidoDto pedidoDto = new PedidoDto();
+        pedidoDto.setValorTotal(valorTotal);
+        pedidoDto.setItens(pedidoItens);
+        return  pedidoDto;
+    }
+
+    public Pedido getPedido(Integer id){
+        return pedidoRepository.findById(id).orElseThrow();
     }
 
 }

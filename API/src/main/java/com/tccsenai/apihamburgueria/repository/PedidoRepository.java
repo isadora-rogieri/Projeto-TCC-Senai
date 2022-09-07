@@ -9,4 +9,6 @@ import java.util.List;
 public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
 
     List<Pedido> findAllByUsuario(Usuario usuario);
+
+    List<Pedido> findAllById(Integer id);
 }

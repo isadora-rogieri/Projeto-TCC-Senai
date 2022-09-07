@@ -40,6 +40,15 @@ public class PedidoController {
         return new ResponseEntity<>(pedidoDto, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public  ResponseEntity<PedidoDto> getItemsPedido(@PathVariable(name = "id") Integer pedidoId) {
+        Pedido pedido = pedidoService.getPedido(pedidoId);
+
+
+        PedidoDto pedidoDto = pedidoService.getItemsPedido(pedido);
+        return new ResponseEntity<>(pedidoDto, HttpStatus.OK);
+    }
+
     @GetMapping
     public List<Pedido> getTodosPedidos() {
 
