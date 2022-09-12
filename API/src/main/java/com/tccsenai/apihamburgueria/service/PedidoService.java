@@ -1,85 +1,114 @@
 package com.tccsenai.apihamburgueria.service;
 
-import com.tccsenai.apihamburgueria.dto.AddItemPedidoDto;
 import com.tccsenai.apihamburgueria.dto.ItemPedidoDto;
 import com.tccsenai.apihamburgueria.dto.PedidoDto;
+import com.tccsenai.apihamburgueria.enums.StatusPedido;
+import com.tccsenai.apihamburgueria.model.ItemPedido;
 import com.tccsenai.apihamburgueria.model.Pedido;
 import com.tccsenai.apihamburgueria.model.Produto;
-import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.repository.PedidoRepository;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 
 @Service
 public class PedidoService {
 
     @Autowired
-    ProdutosService produtosService;
+    private PedidoRepository pedidoRepository;
 
     @Autowired
-    PedidoRepository pedidoRepository;
+    private ItemPedidoService itemPedidoService;
 
-    public  void addPedido(AddItemPedidoDto addItemPedidoDto, Usuario cliente){
-        Produto produto = produtosService.buscaProdutoById(addItemPedidoDto.getId());
+    @Autowired
+    private UsuarioService usuarioService;
 
-        Pedido pedido = new Pedido();
-        pedido.setProduto(produto);
-        pedido.setUsuario(cliente);
-        pedido.setQuantidade(addItemPedidoDto.getQuantidade());
-        pedido.setData(LocalDate.now());
+    public List<Pedido> listarTodos() {
+        return pedidoRepository.findAll();
+    }
+
+    public Pedido findById(Integer id) {
+
+        return  pedidoRepository.findOneById(id);
+    }
+
+
+
+    public void save(Pedido pedido) {
+        if (pedido.getId() != null) {
+            update(pedido);
+        } else {
+            insert(pedido); }
+    }
+
+    @Transactional
+    public void insert(Pedido pedido) {
+
+        pedido.setStatusPedido(StatusPedido.EM_PREPARO);
+        pedidoRepository.save(pedido);
+    }
+
+    @Transactional
+    public void update(Pedido pedido) {
+        Pedido pedidoSalvo = findById(pedido.getId());
+        if (pedido.getStatusPedido() == null) { pedido.setStatusPedido(pedidoSalvo.getStatusPedido()); }
+        pedido.setData(pedidoSalvo.getData());
+
+
+        pedidoSalvo.getItens().forEach(item -> {
+            if (item.getId() != null && !pedido.getItens().contains(item)) {
+                itemPedidoService.delete(item);
+            }
+        });
 
         pedidoRepository.save(pedido);
     }
 
-    public PedidoDto listPedidosItems(Usuario cliente) {
-        List<Pedido> pedidoList = pedidoRepository.findAllByUsuario(cliente);
+    public void delete(Integer id) {
+        pedidoRepository.deleteById(id);
 
-        List<ItemPedidoDto> pedidoItens = new ArrayList<>();
+    }
+
+    public Pedido fromDto(PedidoDto pedidoDto) {
+        List<ItemPedido> itemPedidoList = new ArrayList<>();
+
+        Pedido pedido = new Pedido();
+        pedido.setId(pedidoDto.getId());
+        pedido.setUsuario(usuarioService.buscaUsuarioById(pedidoDto.getUsuarioId()));
+        pedido.setData(LocalDate.now());
+
+        ItemPedido itemPedido = new ItemPedido();
         BigDecimal valorTotal = BigDecimal.ZERO;
-        for (Pedido itemPedido: pedidoList) {
-            ItemPedidoDto itemPedidoDto = new ItemPedidoDto(itemPedido);
-            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(itemPedido.getProduto().getPreco()).add(valorTotal);
 
-            pedidoItens.add(itemPedidoDto);
+        for (ItemPedidoDto itemPedidoDto : pedidoDto.getItensPedido()) {
+            itemPedido = itemPedidoService.fromDto(itemPedidoDto);
+            itemPedido.setPedido(pedido);
+
+            var produto = itemPedidoService.fromDto(itemPedidoDto).getProduto();
+
+            itemPedidoList.add(itemPedido);
+            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(produto.getPreco()).add(valorTotal);
         }
+        pedido.setItensPedido(itemPedidoService.listPedido(pedido.getId()));
+        pedido.setValorTotal(valorTotal);
 
-        PedidoDto pedidoDto = new PedidoDto();
-        pedidoDto.setValorTotal(valorTotal);
-        pedidoDto.setItens(pedidoItens);
-        return  pedidoDto;
+        return pedido;
     }
 
-    public List<Pedido> listTodosPedidos() {
-        List<Pedido> pedidoList = pedidoRepository.findAll();
-
-        return  pedidoList;
+    public void updateStatus(Integer id, StatusPedido statusPedido) {
+        Pedido pedido = new Pedido();
+        pedido.setStatusPedido(statusPedido);
+        pedidoRepository.save(pedido);
     }
 
-    public PedidoDto getItemsPedido(Pedido pedido) {
-        List<Pedido> pedidoList = pedidoRepository.findAllById(pedido.getId());
-
-        List<ItemPedidoDto> pedidoItens = new ArrayList<>();
-        BigDecimal valorTotal = BigDecimal.ZERO;
-        for (Pedido itemPedido: pedidoList) {
-            ItemPedidoDto itemPedidoDto = new ItemPedidoDto(itemPedido);
-            valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(itemPedido.getProduto().getPreco()).add(valorTotal);
-
-            pedidoItens.add(itemPedidoDto);
-        }
-
-        PedidoDto pedidoDto = new PedidoDto();
-        pedidoDto.setValorTotal(valorTotal);
-        pedidoDto.setItens(pedidoItens);
-        return  pedidoDto;
-    }
-
-    public Pedido getPedido(Integer id){
-        return pedidoRepository.findById(id).orElseThrow();
-    }
 
 }

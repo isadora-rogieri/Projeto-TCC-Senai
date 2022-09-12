@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 @Getter
@@ -35,7 +36,7 @@ public class Usuario implements Serializable  {
     protected String telefone;
     @Column(nullable = false)
     @NotNull(message = "Data nascimento obrigatório")
-    protected OffsetDateTime dataNacimento;
+    protected LocalDate dataNacimento;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     protected TipoUsuario tipoUsuario;

@@ -36,4 +36,11 @@ public class Produto implements Serializable {
 
     protected String byteImagem;
 
+    public Produto() { }
+
+    public Produto(String nome, String descricao, double preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = BigDecimal.valueOf(preco);
+    }
 }
