@@ -23,6 +23,7 @@ import java.util.Optional;
 @Service
 public class PedidoService {
 
+
     @Autowired
     private PedidoRepository pedidoRepository;
 
@@ -98,8 +99,9 @@ public class PedidoService {
             itemPedidoList.add(itemPedido);
             valorTotal = BigDecimal.valueOf(itemPedidoDto.getQuantidade()).multiply(produto.getPreco()).add(valorTotal);
         }
-        pedido.setItensPedido(itemPedidoService.listPedido(pedido.getId()));
+        pedido.setItensPedido(itemPedidoList);
         pedido.setValorTotal(valorTotal);
+        pedido.setFormaPagamento(pedidoDto.getFormaPagamento());
 
         return pedido;
     }

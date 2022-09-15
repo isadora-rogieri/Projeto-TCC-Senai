@@ -1,5 +1,6 @@
 package com.tccsenai.apihamburgueria.dto;
 
+import com.tccsenai.apihamburgueria.enums.FormaPagamento;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,4 +16,6 @@ public class PedidoDto {
     protected  Integer usuarioId;
 
     protected List<ItemPedidoDto> itensPedido = new ArrayList<>();
+
+    protected FormaPagamento formaPagamento;
 }

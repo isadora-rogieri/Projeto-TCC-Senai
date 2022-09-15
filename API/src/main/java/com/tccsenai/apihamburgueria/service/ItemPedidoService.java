@@ -2,13 +2,11 @@ package com.tccsenai.apihamburgueria.service;
 
 import com.tccsenai.apihamburgueria.dto.ItemPedidoDto;
 import com.tccsenai.apihamburgueria.model.ItemPedido;
-import com.tccsenai.apihamburgueria.model.Pedido;
-import com.tccsenai.apihamburgueria.model.Produto;
 import com.tccsenai.apihamburgueria.repository.ItemPedidoRepository;
-import com.tccsenai.apihamburgueria.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +45,7 @@ public class ItemPedidoService {
         var produto = produtoService.buscaProdutoById(itemPedidoDto.getProdutoId());
 
         itemPedido.setProduto(produto);
-        itemPedido.setValor(produto.getPreco());
+        itemPedido.setValor(produto.getPreco().multiply(BigDecimal.valueOf(itemPedido.getQuantidade())));
 
         return itemPedido;
     }
