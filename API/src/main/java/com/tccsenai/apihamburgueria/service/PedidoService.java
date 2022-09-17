@@ -5,11 +5,8 @@ import com.tccsenai.apihamburgueria.dto.PedidoDto;
 import com.tccsenai.apihamburgueria.enums.StatusPedido;
 import com.tccsenai.apihamburgueria.model.ItemPedido;
 import com.tccsenai.apihamburgueria.model.Pedido;
-import com.tccsenai.apihamburgueria.model.Produto;
 import com.tccsenai.apihamburgueria.repository.PedidoRepository;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,7 +14,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -107,8 +103,9 @@ public class PedidoService {
     }
 
     public void updateStatus(Integer id, StatusPedido statusPedido) {
-        Pedido pedido = new Pedido();
+        Pedido pedido = pedidoRepository.getById(id);
         pedido.setStatusPedido(statusPedido);
+
         pedidoRepository.save(pedido);
     }
 

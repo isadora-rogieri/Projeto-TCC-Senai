@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,12 +26,14 @@ public class UsuarioController {
     public Usuario buscaUsuarioById(Integer id){
         return usuarioService.buscaUsuarioById(id);
     }
+
     @PostMapping
-    public ResponseEntity salvarUsuario(@RequestBody Usuario usuario){
+    public ResponseEntity salvarUsuario(@Valid @RequestBody Usuario usuario){
         this.usuarioService.cadastroNovoUser(usuario);
         ResponseEntity response = new ResponseEntity("Usuario criado", HttpStatus.CREATED);
         return response;
     }
+
     @PutMapping("/{id}")
     public ResponseEntity alterarUsuario(@PathVariable("id") Integer id, @RequestBody Usuario usuario){
         this.usuarioService.atualizarUser(id,usuario);

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class ProdutoController {
 
 
     @PostMapping
-    public ResponseEntity cadastrarProduto(@RequestBody Produto produto){
+    public ResponseEntity cadastrarProduto(@Valid @RequestBody Produto produto){
            produtosService.salvarProduto(produto);
 
             ResponseEntity response = new ResponseEntity("Produto criado", HttpStatus.CREATED);
@@ -31,6 +32,7 @@ public class ProdutoController {
     public List<Produto> getProdutos(){
         return produtosService.litarTodos();
     }
+
     @GetMapping("/{id}")
     public  Produto getProduto(@PathVariable("id") Integer id){
         return  produtosService.buscaProdutoById(id);
