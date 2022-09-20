@@ -23,7 +23,7 @@ public class ItemPedido {
     @JoinColumn(name = "pedido_id",referencedColumnName = "id")
     protected Pedido pedido;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "produto_id",referencedColumnName = "id")
     protected Produto produto;
 

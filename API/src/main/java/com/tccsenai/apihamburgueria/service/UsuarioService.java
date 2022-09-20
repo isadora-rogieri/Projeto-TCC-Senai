@@ -1,5 +1,8 @@
 package com.tccsenai.apihamburgueria.service;
 
+
+import com.tccsenai.apihamburgueria.dto.UsuarioDto;
+import com.tccsenai.apihamburgueria.enums.TipoUsuario;
 import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,30 +17,51 @@ public class UsuarioService {
     UsuarioRepository usuarioRepository;
 
 
-    public Usuario cadastroNovoUser(Usuario usuario){
+    public Usuario cadastroNovoUsuario(UsuarioDto usuarioDto){
+        var usuario = fromDto(usuarioDto);
       this.usuarioRepository.save(usuario);
       return usuario;
+    }
+    private Usuario fromDto(UsuarioDto usuarioDto) {
+        Usuario usuario = new Usuario();
+        usuario.setNome(usuarioDto.getNome());
+        usuario.setCep(usuarioDto.getCep());
+        usuario.setCpf(usuarioDto.getCpf());
+        usuario.setCidade(usuarioDto.getCidade());
+        usuario.setBairro(usuarioDto.getBairro());
+        usuario.setEmail(usuarioDto.getEmail());
+        usuario.setTelefone(usuarioDto.getTelefone());
+        usuario.setDataNacimento(usuarioDto.getDataNacimento());
+        usuario.setSenha(usuarioDto.getSenha());
+        usuario.setNome(usuarioDto.getNome());
+        usuario.setNumero(usuarioDto.getNumero());
+        usuario.setEndereco(usuarioDto.getEndereco());
+        usuario.setTipoUsuario(TipoUsuario.CLIENTE);
+        usuario.setComplemento(usuarioDto.getComplemento());
+
+        return usuario;
     }
 
     public List<Usuario> litarTodos() {
         return usuarioRepository.findAll();
     }
-    public void atualizarUser(Integer id, Usuario usuario){
+
+    public void atualizarUsuario(Integer id, UsuarioDto usuarioDto){
         Usuario usuario1 = this.usuarioRepository.findOneById(id);
-        usuario1.setNome(usuario.getNome());
-        usuario1.setEmail(usuario.getEmail());
-        usuario1.setCep(usuario.getCep());
-        usuario1.setEndereco(usuario.getEndereco());
-        usuario1.setBairro(usuario.getBairro());
-        usuario1.setCidade(usuario.getCidade());
-        usuario1.setComplemento(usuario.getComplemento());
-        usuario1.setNumero(usuario.getNumero());
-        usuario1.setTelefone(usuario.getTelefone());
+        usuario1.setNome(usuarioDto.getNome());
+        usuario1.setEmail(usuarioDto.getEmail());
+        usuario1.setCep(usuarioDto.getCep());
+        usuario1.setEndereco(usuarioDto.getEndereco());
+        usuario1.setBairro(usuarioDto.getBairro());
+        usuario1.setCidade(usuarioDto.getCidade());
+        usuario1.setComplemento(usuarioDto.getComplemento());
+        usuario1.setNumero(usuarioDto.getNumero());
+        usuario1.setTelefone(usuarioDto.getTelefone());
 
         this.usuarioRepository.save(usuario1);
     }
 
-    public void deletarUser(Integer id){
+    public void deletarUsuario(Integer id){
         Usuario usuario = this.usuarioRepository.findOneById(id);
         this.usuarioRepository.delete(usuario);
     }

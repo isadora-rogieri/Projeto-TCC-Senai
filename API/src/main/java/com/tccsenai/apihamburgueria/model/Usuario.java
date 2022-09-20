@@ -2,6 +2,7 @@ package com.tccsenai.apihamburgueria.model;
 
 import com.tccsenai.apihamburgueria.enums.TipoUsuario;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Usuario implements Serializable  {
 
     @Id
@@ -60,8 +62,6 @@ public class Usuario implements Serializable  {
     @Column(nullable = false)
     @NotBlank(message = "Cidade obrigatório")
     protected  String cidade;
-
-
 
 
 }

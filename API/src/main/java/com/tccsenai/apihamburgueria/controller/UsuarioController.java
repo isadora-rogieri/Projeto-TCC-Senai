@@ -1,5 +1,6 @@
 package com.tccsenai.apihamburgueria.controller;
 
+import com.tccsenai.apihamburgueria.dto.UsuarioDto;
 import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,22 +29,22 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity salvarUsuario(@Valid @RequestBody Usuario usuario){
-        this.usuarioService.cadastroNovoUser(usuario);
+    public ResponseEntity salvarUsuario(@Valid @RequestBody UsuarioDto usuarioDto){
+        this.usuarioService.cadastroNovoUsuario(usuarioDto);
         ResponseEntity response = new ResponseEntity("Usuario criado", HttpStatus.CREATED);
         return response;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity alterarUsuario(@PathVariable("id") Integer id, @RequestBody Usuario usuario){
-        this.usuarioService.atualizarUser(id,usuario);
+    public ResponseEntity alterarUsuario(@PathVariable("id") Integer id, @RequestBody UsuarioDto usuarioDto){
+        this.usuarioService.atualizarUsuario(id,usuarioDto);
         ResponseEntity response = new ResponseEntity("Usuario alterado", HttpStatus.OK);
         return response;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity deletarUsuario(@PathVariable("id") Integer id){
-        this.usuarioService.deletarUser(id);
+        this.usuarioService.deletarUsuario(id);
         ResponseEntity response = new ResponseEntity("Usuario Deletado", HttpStatus.OK);
         return response;
     }

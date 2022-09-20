@@ -34,11 +34,11 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity insert(@Valid @RequestBody PedidoDto dto) {
+    public ResponseEntity inserir(@Valid @RequestBody PedidoDto dto) {
         Pedido pedido = pedidoService.fromDto(dto);
-        pedidoService.save(pedido);
+        pedidoService.inserir(pedido);
 
-        return  new ResponseEntity("Produto adicionado", HttpStatus.OK);
+        return  new ResponseEntity("Pedido Criado", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -51,10 +51,8 @@ public class PedidoController {
 
     @PutMapping(path = "/{id}/status")
     public ResponseEntity alterarStatus(@PathVariable("id") Integer id, @Valid @RequestParam StatusPedido status) {
-        pedidoService.updateStatus(id, status);
+        pedidoService.alterarStatus(id, status);
         return  new ResponseEntity("Status Pedido Alterado", HttpStatus.OK);
     }
-
-
 
 }

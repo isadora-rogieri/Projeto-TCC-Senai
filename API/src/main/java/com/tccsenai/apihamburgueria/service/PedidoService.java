@@ -5,6 +5,7 @@ import com.tccsenai.apihamburgueria.dto.PedidoDto;
 import com.tccsenai.apihamburgueria.enums.StatusPedido;
 import com.tccsenai.apihamburgueria.model.ItemPedido;
 import com.tccsenai.apihamburgueria.model.Pedido;
+import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,45 +35,19 @@ public class PedidoService {
     }
 
     public Pedido findById(Integer id) {
-
         return  pedidoRepository.findOneById(id);
     }
 
-
-
-    public void save(Pedido pedido) {
-        if (pedido.getId() != null) {
-            update(pedido);
-        } else {
-            insert(pedido); }
-    }
-
     @Transactional
-    public void insert(Pedido pedido) {
-
+    public void inserir(Pedido pedido) {
+        pedido.setData(LocalDate.now());
         pedido.setStatusPedido(StatusPedido.EM_PREPARO);
         pedidoRepository.save(pedido);
     }
 
     @Transactional
-    public void update(Pedido pedido) {
-        Pedido pedidoSalvo = findById(pedido.getId());
-        if (pedido.getStatusPedido() == null) { pedido.setStatusPedido(pedidoSalvo.getStatusPedido()); }
-        pedido.setData(pedidoSalvo.getData());
-
-
-        pedidoSalvo.getItens().forEach(item -> {
-            if (item.getId() != null && !pedido.getItens().contains(item)) {
-                itemPedidoService.delete(item);
-            }
-        });
-
-        pedidoRepository.save(pedido);
-    }
-
     public void delete(Integer id) {
         pedidoRepository.deleteById(id);
-
     }
 
     public Pedido fromDto(PedidoDto pedidoDto) {
@@ -81,9 +56,8 @@ public class PedidoService {
         Pedido pedido = new Pedido();
         pedido.setId(pedidoDto.getId());
         pedido.setUsuario(usuarioService.buscaUsuarioById(pedidoDto.getUsuarioId()));
-        pedido.setData(LocalDate.now());
 
-        ItemPedido itemPedido = new ItemPedido();
+        ItemPedido itemPedido ;
         BigDecimal valorTotal = BigDecimal.ZERO;
 
         for (ItemPedidoDto itemPedidoDto : pedidoDto.getItensPedido()) {
@@ -102,12 +76,11 @@ public class PedidoService {
         return pedido;
     }
 
-    public void updateStatus(Integer id, StatusPedido statusPedido) {
+    public void alterarStatus(Integer id, StatusPedido statusPedido) {
         Pedido pedido = pedidoRepository.getById(id);
         pedido.setStatusPedido(statusPedido);
 
         pedidoRepository.save(pedido);
     }
-
 
 }

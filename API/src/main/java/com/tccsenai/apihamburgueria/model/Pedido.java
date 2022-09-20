@@ -24,7 +24,7 @@ public class Pedido {
     protected Integer id;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Usuario_id",referencedColumnName = "id")
     protected Usuario usuario;
 
@@ -35,10 +35,8 @@ public class Pedido {
     @Column(nullable = false)
     protected LocalDate data;
 
-    //@Column(nullable = false)
     protected BigDecimal valorTotal;
 
-    //@Column(nullable = false)
     protected StatusPedido statusPedido;
 
     protected FormaPagamento formaPagamento;
