@@ -92,58 +92,6 @@ public class CadastraUsuario extends AppCompatActivity {
             }
         });
 
-        /*
-        btCadastrar.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
-
-
-                JSONObject usuario = new JSONObject();
-                try {
-                    usuario.put("nome", nome.getText().toString());
-                    usuario.put("email", email.getText().toString());
-                    usuario.put("cpf", cpf.getText().toString());
-                    usuario.put("telefone", telefone.getText().toString());
-                    usuario.put("dataNascimento", dataNascimento.getText().toString());
-                    usuario.put("endereco", endereco.getText().toString());
-                    usuario.put("numero", numero.getText().toString());
-                    usuario.put("complemento", complemento.getText().toString());
-                    usuario.put("bairro", bairro.getText().toString());
-                    usuario.put("cep", cep.getText().toString());
-                    usuario.put("cidade", cidade.getText().toString());
-                    usuario.put("senha", senha.getText().toString());
-
-            }catch (JSONException jExc){
-                jExc.printStackTrace();
-
-            }
-                JsonObjectRequest config = new JsonObjectRequest(
-                        Request.Method.POST,
-                        url,
-                        usuario,
-                        new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        //verificar se o conteudo retornado pelo webservice
-                        //possui mesmo um objeto da classe Produto
-                        Toast.makeText(CadastraUsuario.this, "Cadastrado!", Toast.LENGTH_LONG).show();
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(CadastraUsuario.this, "Erro ao cadastrar", Toast.LENGTH_LONG).show();
-
-                    }
-                }
-                );
-
-                //pedir para executar a configuracao acima
-                requisicao.add(config);
-
-            }
-
-        });*/
+       
     }
 }
