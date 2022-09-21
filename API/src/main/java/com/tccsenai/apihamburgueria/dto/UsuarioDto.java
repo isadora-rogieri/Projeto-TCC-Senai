@@ -3,8 +3,6 @@ package com.tccsenai.apihamburgueria.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 public class UsuarioDto {
@@ -17,7 +15,7 @@ public class UsuarioDto {
 
     protected String telefone;
 
-    protected LocalDate dataNacimento;
+    protected String dataNascimento;
 
     protected  String senha;
 
