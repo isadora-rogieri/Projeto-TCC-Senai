@@ -1,12 +1,14 @@
 package com.tccsenai.loucosporlanchesapp.model;
 
+import java.math.BigDecimal;
+
 public class Produto {
 
 
     public int  id;
     public  String nome;
     public  String descricao;
-    public  double preco;
+    public double preco;
     public  String byteImagem;
 
     public Produto() {
@@ -21,6 +23,10 @@ public class Produto {
     }
 
     public Produto(String nome, double preco, String descricao, String byteImagem) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.byteImagem = byteImagem;
     }
 
     public int getId() {

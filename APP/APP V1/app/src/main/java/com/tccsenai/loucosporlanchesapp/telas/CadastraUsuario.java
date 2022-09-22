@@ -1,4 +1,4 @@
-package com.tccsenai.loucosporlanchesapp;
+package com.tccsenai.loucosporlanchesapp.telas;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -14,18 +14,10 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.tccsenai.loucosporlanchesapp.model.Usuario;
+import com.tccsenai.loucosporlanchesapp.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,7 +48,9 @@ public class CadastraUsuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 requisicao = Volley.newRequestQueue(CadastraUsuario.this);
-                String url = "http://000.000.000.00:8080/api/hamburgueria/usuarios";
+                String url = "http://192.168.162.232:8080/api/hamburgueria/usuarios";
+                //192.168.162.232
+                //192.168.0.14
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,url,
                         response -> Toast.makeText(CadastraUsuario.this, "Sucesso!", Toast.LENGTH_LONG).show(),
@@ -92,6 +86,5 @@ public class CadastraUsuario extends AppCompatActivity {
             }
         });
 
-       
     }
 }
