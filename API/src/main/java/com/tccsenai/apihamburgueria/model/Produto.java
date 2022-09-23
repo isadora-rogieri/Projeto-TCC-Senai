@@ -32,8 +32,6 @@ public class Produto implements Serializable {
     @NotNull(message = "Preço obrigatório")
     protected BigDecimal preco;
 
-    protected String caminhoImagem;
-
     protected String byteImagem;
 
     public Produto() { }

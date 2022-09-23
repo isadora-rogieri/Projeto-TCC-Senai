@@ -23,10 +23,8 @@ public class ProdutosService {
     public void atualizarProduto(Integer id, Produto produto){
         Produto produto1 = this.produtoRepository.findById(id).orElseThrow();
         produto1.setNome(produto.getNome());
-        produto1.setCaminhoImagem(produto.getCaminhoImagem());
         produto1.setDescricao(produto.getDescricao());
         produto1.setPreco(produto.getPreco());
-        produto1.setCaminhoImagem(produto.getCaminhoImagem());
 
         this.produtoRepository.save(produto1);
     }

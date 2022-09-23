@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+
 @RestController
 @RequestMapping("/imagens")
 @CrossOrigin
@@ -16,14 +17,8 @@ public class imagemController {
     Diretorio diretorio;
 
     @PostMapping
-    public  void salvarImagem(@RequestParam MultipartFile imagem, @RequestParam Integer produto_id) throws IOException {
-       diretorio.salvarImagem(imagem, produto_id);
-    }
-
-    @GetMapping
-    public  String retornaImagem(@RequestParam Integer produto_id) throws IOException {
-        diretorio.getImagem(produto_id);
-        return "Sucesso!";
+    public  void salvartesteImagem(@RequestParam MultipartFile imagem, @RequestParam Integer produto_id) throws IOException {
+        diretorio.salvarBytesImagem(imagem, produto_id);
     }
 
 }
