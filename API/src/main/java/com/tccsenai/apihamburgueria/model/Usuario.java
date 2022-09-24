@@ -27,7 +27,7 @@ public class Usuario implements Serializable  {
     @NotBlank(message = "Nome obrigatório")
     @Size(min = 5, max = 100)
     protected String nome;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @NotBlank(message = "CPF obrigatório")
     protected String cpf;
     @Column(nullable = false)
