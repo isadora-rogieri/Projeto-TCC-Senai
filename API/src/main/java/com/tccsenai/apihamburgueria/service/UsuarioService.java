@@ -7,10 +7,9 @@ import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import util.TrataStrings;
 
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -29,13 +28,13 @@ public class UsuarioService {
         Usuario usuario = new Usuario();
         usuario.setNome(usuarioDto.getNome());
         usuario.setCep(usuarioDto.getCep());
-        usuario.setCpf(usuarioDto.getCpf());
+        usuario.setCpf(TrataStrings.removePontuacao(usuarioDto.getCpf()));
         usuario.setCidade(usuarioDto.getCidade());
         usuario.setBairro(usuarioDto.getBairro());
         usuario.setEmail(usuarioDto.getEmail());
         usuario.setTelefone(usuarioDto.getTelefone());
-        usuario.setDataNacimento(converteData(usuarioDto.getDataNascimento()));
-        usuario.setSenha(usuarioDto.getSenha());
+        usuario.setDataNacimento(TrataStrings.converteData(usuarioDto.getDataNascimento()));
+        usuario.setSenha(TrataStrings.criptografaSenha(usuarioDto.getSenha()));
         usuario.setNome(usuarioDto.getNome());
         usuario.setNumero(usuarioDto.getNumero());
         usuario.setEndereco(usuarioDto.getEndereco());
@@ -44,11 +43,7 @@ public class UsuarioService {
 
         return usuario;
     }
-    private LocalDate converteData(String data) throws ParseException {
 
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return  LocalDate.parse(data, format);
-    }
 
     public List<Usuario> litarTodos() {
         return usuarioRepository.findAll();
