@@ -1,6 +1,5 @@
 package com.tccsenai.apihamburgueria.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tccsenai.apihamburgueria.enums.FormaPagamento;
 import com.tccsenai.apihamburgueria.enums.StatusPedido;
@@ -10,7 +9,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,18 +49,6 @@ public class Pedido {
         this.valorTotal = valorTotal;
         this.statusPedido = statusPedido;
     }
-
-    /*private void setTotal() {
-        this.valorTotal = BigDecimal.ZERO;
-        BigDecimal totalProdutos = BigDecimal.ZERO;
-
-
-        if (getItens() != null && !getItens().isEmpty()) {
-            for (ItemPedido itemPedido : getItens()) {
-                   this.valorTotal = this.valorTotal.add(itemPedido.getProduto().getPreco());
-                }
-        }
-    }*/
 
     public void setValorTotal(BigDecimal valorTotal) {
         this.valorTotal = valorTotal;

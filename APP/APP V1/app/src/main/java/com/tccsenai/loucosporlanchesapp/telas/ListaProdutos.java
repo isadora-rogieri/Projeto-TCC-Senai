@@ -37,10 +37,10 @@ public class ListaProdutos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_produtos);
+        getSupportActionBar().hide();
 
-        String url = "http://192.168.162.232:8080/api/hamburgueria/produtos";
-        //192.168.162.232
-        //192.168.0.14
+        String url = "http://000.000.000.000:8080/api/hamburgueria/produtos";
+        
         RequestQueue requisicao = Volley.newRequestQueue(ListaProdutos.this);
 
 
@@ -91,6 +91,7 @@ public class ListaProdutos extends AppCompatActivity {
         );
 
         requisicao.add(config);
+
     }
 
 

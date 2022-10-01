@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroudcomlogo"
-    tools:context=".MainActivity">
-
+    android:background="@drawable/backgroudapp"
+    tools:context=".telas.CadastraProduto">
     <Button
-        android:id="@+id/btDadosUser"
+        android:id="@+id/btDadosUser4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="92dp"
@@ -23,18 +22,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btComecar"
-        android:layout_width="156dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="524dp"
-        android:backgroundTint="#FF0F0F"
-        android:text="cadastre-se"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <Button
-        android:id="@+id/btListaProdutos"
+        android:id="@+id/btListaProdutos4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="258dp"
@@ -44,11 +32,26 @@
         android:textSize="20sp"
         app:icon="@drawable/ic_baseline_fastfood_24"
         app:iconPadding="95dp"
-        app:layout_constraintBottom_toBottomOf="@+id/divider2"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btHome"
+        android:id="@+id/btPedidos4"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btHome4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
@@ -63,22 +66,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btPedidos"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="-5dp"
-        android:backgroundTint="#FF770F"
-        android:insetRight="6dp"
-        android:textSize="20sp"
-        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
-        app:iconPadding="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/btCarrinho"
+        android:id="@+id/btCarrinho4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="340dp"
@@ -92,18 +80,20 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
+
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider5"
         android:layout_width="415dp"
         android:layout_height="45dp"
         android:background="#F40C0C"
         android:backgroundTint="#F31313"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/divider2"
+        android:id="@+id/divider6"
         android:layout_width="415dp"
         android:layout_height="55dp"
         android:background="#F40C0C"
@@ -111,4 +101,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@android:style/Widget.Material.TextView"
+        android:layout_width="281dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="124dp"
+        android:drawableTint="#F11212"
+        android:text="CADASTRE UM NOVO PRODUTO"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#E30B0B"
+        android:textEditNoPasteWindowLayout="@layout/activity_main"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btCadastrarProduto"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="232dp"
+        android:backgroundTint="#F42424"
+        android:foregroundTint="#E61010"
+        android:text="CADASTRAR"
+        android:textSize="16sp"
+        app:iconTint="#ED1111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edNomeProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Produto"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:ems="10"
+        android:hint="Descrição"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edNomeProduto" />
+
+    <EditText
+        android:id="@+id/edPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:ems="10"
+        android:hint="Preço"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edDescricao" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroudcomlogo"
-    tools:context=".MainActivity">
+    android:background="@drawable/backgroudapp"
+    tools:context=".telas.LoginActivity">
 
     <Button
-        android:id="@+id/btDadosUser"
+        android:id="@+id/btDadosUser4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="92dp"
@@ -23,18 +23,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btComecar"
-        android:layout_width="156dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="524dp"
-        android:backgroundTint="#FF0F0F"
-        android:text="cadastre-se"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <Button
-        android:id="@+id/btListaProdutos"
+        android:id="@+id/btListaProdutos4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="258dp"
@@ -44,11 +33,26 @@
         android:textSize="20sp"
         app:icon="@drawable/ic_baseline_fastfood_24"
         app:iconPadding="95dp"
-        app:layout_constraintBottom_toBottomOf="@+id/divider2"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btHome"
+        android:id="@+id/btPedidos4"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btHome4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
@@ -63,22 +67,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btPedidos"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="-5dp"
-        android:backgroundTint="#FF770F"
-        android:insetRight="6dp"
-        android:textSize="20sp"
-        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
-        app:iconPadding="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/btCarrinho"
+        android:id="@+id/btCarrinho4"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="340dp"
@@ -93,17 +82,18 @@
         tools:visibility="visible" />
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider5"
         android:layout_width="415dp"
         android:layout_height="45dp"
         android:background="#F40C0C"
         android:backgroundTint="#F31313"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/divider2"
+        android:id="@+id/divider6"
         android:layout_width="415dp"
         android:layout_height="55dp"
         android:background="#F40C0C"
@@ -111,4 +101,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edCPFLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/edSenhaLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="SENHA"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edCPFLogin" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="207dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="sans-serif"
+        android:text="ACESSE SUA CONTA"
+        android:textAlignment="center"
+        android:textColor="#FF0F0F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+    <Button
+        android:id="@+id/btlogin"
+        android:layout_width="115dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#FF0F0F"
+        android:text="Acessar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSenhaLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

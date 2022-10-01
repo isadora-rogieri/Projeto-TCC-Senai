@@ -4,7 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroudapp"
     tools:context=".telas.CadastraUsuario">
+
+    <Button
+        android:id="@+id/btDadosUser2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_person_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btListaProdutos2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="258dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_fastfood_24"
+        app:iconPadding="95dp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btPedidos2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btHome2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_home_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btCarrinho2"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_shopping_cart_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="415dp"
+        android:layout_height="45dp"
+        android:background="#F40C0C"
+        android:backgroundTint="#F31313"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="415dp"
+        android:layout_height="55dp"
+        android:background="#F40C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -12,7 +109,7 @@
         android:layout_width="185dp"
         android:layout_height="43dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="95dp"
         android:drawableTint="#F11212"
         android:text="CADASTRE-SE"
         android:textAlignment="inherit"
@@ -26,10 +123,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="397dp"
-        android:layout_height="387dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="314dp"
+        android:layout_height="335dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -45,8 +142,10 @@
 
                 <EditText
                     android:id="@+id/edTNome"
+                    style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Nome"
                     android:inputType="textPersonName" />
@@ -55,6 +154,7 @@
                     android:id="@+id/edTEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="E-mail"
                     android:inputType="textPersonName" />
@@ -63,6 +163,7 @@
                     android:id="@+id/edTCPF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="CPF"
                     android:inputType="number" />
@@ -71,6 +172,7 @@
                     android:id="@+id/edTData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Data de Nascimento"
                     android:inputType="date" />
@@ -79,6 +181,7 @@
                     android:id="@+id/edTTelefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Telefone"
                     android:inputType="number" />
@@ -87,6 +190,7 @@
                     android:id="@+id/edTEndereco"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Endereço"
                     android:inputType="textPersonName" />
@@ -95,6 +199,7 @@
                     android:id="@+id/edTNumero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Número"
                     android:inputType="textPersonName" />
@@ -103,6 +208,7 @@
                     android:id="@+id/edTBairro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Bairro"
                     android:inputType="textPersonName" />
@@ -111,6 +217,7 @@
                     android:id="@+id/edTCidade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Cidade"
                     android:inputType="textPersonName" />
@@ -119,6 +226,7 @@
                     android:id="@+id/edTCEP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="CEP"
                     android:inputType="number" />
@@ -127,6 +235,7 @@
                     android:id="@+id/edTComplemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Complemento"
                     android:inputType="textPersonName" />
@@ -135,6 +244,7 @@
                     android:id="@+id/edTSenha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#0B0A0A"
                     android:ems="10"
                     android:hint="Senha"
                     android:inputType="textPassword" />

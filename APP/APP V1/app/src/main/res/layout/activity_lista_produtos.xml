@@ -4,18 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroudapp"
     tools:context=".telas.ListaProdutos">
+
+    <Button
+        android:id="@+id/btDadosUser3"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_person_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btListaProdutos3"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="258dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_fastfood_24"
+        app:iconPadding="95dp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btPedidos3"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_assignment_turned_in_24"
+        app:iconPadding="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/divider6"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btHome3"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_home_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btCarrinho3"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#FF770F"
+        android:insetRight="6dp"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_shopping_cart_24"
+        app:iconPadding="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="415dp"
+        android:layout_height="45dp"
+        android:background="#F31313"
+        android:backgroundTint="#F31313"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="415dp"
+        android:layout_height="55dp"
+        android:background="#F40C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/produto_item"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="406dp"
+        android:layout_height="570dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
 </androidx.constraintlayout.widget.ConstraintLayout>
