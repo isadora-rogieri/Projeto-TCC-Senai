@@ -1,7 +1,6 @@
 package com.tccsenai.apihamburgueria.controller;
 
 import com.tccsenai.apihamburgueria.model.Produto;
-import com.tccsenai.apihamburgueria.model.Usuario;
 import com.tccsenai.apihamburgueria.service.ProdutosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,11 +19,9 @@ public class ProdutoController {
 
 
     @PostMapping
-    public ResponseEntity cadastrarProduto(@Valid @RequestBody Produto produto){
-           produtosService.salvarProduto(produto);
+    public Produto cadastrarProduto(@Valid @RequestBody Produto produto){
 
-            ResponseEntity response = new ResponseEntity("Produto criado", HttpStatus.CREATED);
-
+        Produto response = produtosService.salvarProduto(produto);
         return response;
     }
 

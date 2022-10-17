@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.tccsenai.loucosporlanchesapp.MainActivity;
 import com.tccsenai.loucosporlanchesapp.R;
 import com.tccsenai.loucosporlanchesapp.adapter.ListaProdutosAdapter;
 import com.tccsenai.loucosporlanchesapp.model.Produto;
@@ -38,9 +42,18 @@ public class ListaProdutos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_produtos);
         getSupportActionBar().hide();
+        FloatingActionButton adicionarNovoProduto = findViewById(R.id.floatBtCadastrarProd);
+
+        adicionarNovoProduto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(ListaProdutos.this, CadastraProduto.class);
+                startActivity(it);
+            }
+        });
 
         String url = "http://000.000.000.000:8080/api/hamburgueria/produtos";
-        
+
         RequestQueue requisicao = Volley.newRequestQueue(ListaProdutos.this);
 
 

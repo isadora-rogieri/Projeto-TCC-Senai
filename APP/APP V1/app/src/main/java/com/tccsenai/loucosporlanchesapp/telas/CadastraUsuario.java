@@ -60,7 +60,7 @@ public class CadastraUsuario extends AppCompatActivity {
 
 
                 requisicao = Volley.newRequestQueue(CadastraUsuario.this);
-                String url = "http://000.000.000.000:8080/api/hamburgueria/usuarios";
+                String url = "http://192.168.0.14:8080/api/hamburgueria/usuarios";
 
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,url,
@@ -130,7 +130,16 @@ public class CadastraUsuario extends AppCompatActivity {
                                         dataNascimento.setText("");
                                     } else {
                                         //Escrever a data no EditText
-                                        dataNascimento.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                                        if(month<10) {
+                                            if (dayOfMonth < 10) {
+                                                dataNascimento.setText("0" + dayOfMonth + "/0" + month + "/" + year);
+                                            } else {
+                                                dataNascimento.setText(dayOfMonth + "/0" + month + "/" + year);
+                                            }
+                                        } else {
+                                            dataNascimento.setText(dayOfMonth + "/" + month + "/" + year);
+                                        }
+
                                     }
                                 }
                             },

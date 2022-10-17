@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tccsenai.loucosporlanchesapp.telas.CadastraProduto;
 import com.tccsenai.loucosporlanchesapp.telas.CadastraUsuario;
 import com.tccsenai.loucosporlanchesapp.telas.ListaProdutos;
 import com.tccsenai.loucosporlanchesapp.telas.LoginActivity;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Button btProdutos = findViewById(R.id.btListaProdutos);
         Button bthome = findViewById(R.id.btHome);
         Button btUser = findViewById(R.id.btDadosUser);
+        Button btPedidos = findViewById(R.id.btPedidos);
+        Button btLogin = findViewById(R.id.btTelaLogin);
 
 
         btComeçar.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btUser.setOnClickListener(new View.OnClickListener() {
+        btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(MainActivity.this, LoginActivity.class);

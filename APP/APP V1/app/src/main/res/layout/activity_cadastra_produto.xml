@@ -7,7 +7,7 @@
     android:background="@drawable/backgroudapp"
     tools:context=".telas.CadastraProduto">
     <Button
-        android:id="@+id/btDadosUser4"
+        android:id="@+id/btDadosUser5"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="92dp"
@@ -22,7 +22,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btListaProdutos4"
+        android:id="@+id/btListaProdutos5"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="258dp"
@@ -36,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btPedidos4"
+        android:id="@+id/btPedidos5"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="180dp"
@@ -51,7 +51,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btHome4"
+        android:id="@+id/btHome5"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
@@ -66,7 +66,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btCarrinho4"
+        android:id="@+id/btCarrinho5"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="340dp"
@@ -124,8 +124,8 @@
         android:id="@+id/btCadastrarProduto"
         android:layout_width="200dp"
         android:layout_height="54dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="176dp"
         android:backgroundTint="#F42424"
         android:foregroundTint="#E61010"
         android:text="CADASTRAR"
@@ -143,6 +143,8 @@
         android:ems="10"
         android:hint="Produto"
         android:inputType="textPersonName"
+        android:textColor="#F10E0E"
+        android:textColorHint="#F10E0E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -154,6 +156,8 @@
         android:ems="10"
         android:hint="Descrição"
         android:inputType="textPersonName"
+        android:textColor="#F10E0E"
+        android:textColorHint="#F10E0E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edNomeProduto" />
 
@@ -164,9 +168,22 @@
         android:layout_marginStart="88dp"
         android:ems="10"
         android:hint="Preço"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
+        android:textColor="#F10E0E"
+        android:textColorHint="#F10E0E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edDescricao" />
+
+    <Button
+        android:id="@+id/btSelecImagem"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#F42424"
+        android:text="Selecionar imagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edPreco" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
