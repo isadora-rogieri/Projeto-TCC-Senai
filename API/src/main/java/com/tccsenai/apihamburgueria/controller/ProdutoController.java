@@ -4,11 +4,14 @@ import com.tccsenai.apihamburgueria.model.Produto;
 import com.tccsenai.apihamburgueria.service.ProdutosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/hamburgueria/produtos")
@@ -42,12 +45,22 @@ public class ProdutoController {
         return response;
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity deletarProduto(@PathVariable("id") Integer id){
-        this.produtosService.deletarProduto(id);
-        ResponseEntity response = new ResponseEntity("Produto Deletado", HttpStatus.OK);
-        return response;
-    }
+    @DeleteMapping(value="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> deletarProduto(@PathVariable("id") Integer id){
+
+            this.produtosService.deletarProduto(id);
+            Map<String, String> stringStringMap = new HashMap<>();
+            stringStringMap.put("status", "successo");
+            stringStringMap.put("message", "Deletado com sucesso");
+            stringStringMap.put("code", "200");
+            return ResponseEntity.status(HttpStatus.OK).
+                    body(stringStringMap);
+
+        }
+
+
+
+
 
 
 }
