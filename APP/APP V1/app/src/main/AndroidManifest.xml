@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +19,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".TelaAtualizaProduto"
+            android:exported="false" />
+        <activity
+            android:name=".telas.ListaEditDelProdutos"
+            android:exported="false" />
+        <activity
+            android:name=".telas.TermoEInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".telas.CadastraProduto"
             android:exported="false" />
         <activity
@@ -30,7 +39,6 @@
         <activity
             android:name=".telas.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

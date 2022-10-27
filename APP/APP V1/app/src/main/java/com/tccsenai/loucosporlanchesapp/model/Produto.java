@@ -36,6 +36,16 @@ public class Produto {
         this.byteImagem = byteImagem;
     }
 
+
+    public Produto(int id, String nome, double preco, String descricao, String byteImagem) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.byteImagem = byteImagem;
+    }
+
+
     public int getId() {
         return id;
     }

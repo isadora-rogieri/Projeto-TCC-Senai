@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tccsenai.loucosporlanchesapp.telas.CadastraProduto;
 import com.tccsenai.loucosporlanchesapp.telas.CadastraUsuario;
 import com.tccsenai.loucosporlanchesapp.telas.ListaProdutos;
 import com.tccsenai.loucosporlanchesapp.telas.LoginActivity;
+import com.tccsenai.loucosporlanchesapp.telas.TermoEInfoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button btUser = findViewById(R.id.btDadosUser);
         Button btPedidos = findViewById(R.id.btPedidos);
         Button btLogin = findViewById(R.id.btTelaLogin);
+        FloatingActionButton btInfo = findViewById(R.id.floaBtInfo);
 
 
         btComeçar.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +55,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        btPedidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, TermoEInfoActivity.class);
+                startActivity(it);
+            }
+        });
+
+
 
     }
 }

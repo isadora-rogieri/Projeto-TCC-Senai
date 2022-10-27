@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tccsenai.loucosporlanchesapp.R;
 
 import org.json.JSONException;
@@ -45,6 +46,7 @@ public class CadastraProduto extends AppCompatActivity {
         Button btProdutos = findViewById(R.id.btListaProdutos5);
         Button bthome = findViewById(R.id.btHome5);
         Button btUser = findViewById(R.id.btDadosUser5);
+        FloatingActionButton btEditeDel = findViewById(R.id.floatEditEDelet);
 
         btProdutos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +70,13 @@ public class CadastraProduto extends AppCompatActivity {
                 startActivity(it);
             }
         });
+        btEditeDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(CadastraProduto.this, ListaEditDelProdutos.class);
+                startActivity(it);
+            }
+        });
 
         btSelecionaImagem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +92,7 @@ public class CadastraProduto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String url = "http://000.000.000.000:8080/api/hamburgueria/produtos";
+                String url = "http://000.000.00.000:8080/api/hamburgueria/produtos";
                 JSONObject dadosEnvio = new JSONObject();
                 try {
 
