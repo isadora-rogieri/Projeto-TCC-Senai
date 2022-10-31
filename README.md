@@ -18,30 +18,31 @@ ________________
 
 
 Com Aplicação em Java (API) é possível cadastrar, editar, deletar e listar usuários, produtos, pedidos e os itens de pedido.
-&nbsp;
+ <br>
 EndPoints (/api/hamburgueria)
-&nbsp;
+ <br>
+ <br>
 ✅/usuarios
-GET Retorna todos os usuários já cadastrados.
-POST Insere um novo usuário no banco.
-/usuarios/{id}
-GET Retorna um usuário de acordo com o id correspondente ao enviado na url.
-PUT Edita o usuário com id correspondente ao enviado na url.
-DELETE Exclui do banco o usuário com id correspondente ao enviado na url.
-&nbsp;
-✅/produtos
-GET Retorna todos os produtos já cadastrados.
-POST Insere um novo produto no banco.
-/produtos/{id}
-GET Retorna um produto de acordo com o id correspondente ao enviado na url.
-PUT Edita o produto com id correspondente ao enviado na url.
-DELETE Exclui do banco o produto com id correspondente ao enviado na url.
-&nbsp;
-✅/pedidos
-GET Retorna todos os pedidos já cadastrados.
-POST Insere um novo pedido no banco.
-/pedidos/{id}
-GET Retorna um pedido de acordo com o id correspondente ao enviado na url.
-PUT Edita o pedido com id correspondente ao enviado na url.
-DELETE Exclui do banco o pedido com id correspondente ao enviado na url.
+<br>GET Retorna todos os usuários já cadastrados.
+<br>POST Insere um novo usuário no banco.
+<br>/usuarios/{id}
+<br>GET Retorna um usuário de acordo com o id correspondente ao enviado na url.
+<br>PUT Edita o usuário com id correspondente ao enviado na url.
+<br>DELETE Exclui do banco o usuário com id correspondente ao enviado na url.
+ <br /> 
+<br>✅/produtos
+<br>GET Retorna todos os produtos já cadastrados.
+<br>POST Insere um novo produto no banco.
+<br>/produtos/{id}
+<br>GET Retorna um produto de acordo com o id correspondente ao enviado na url.
+<br>PUT Edita o produto com id correspondente ao enviado na url.
+<br>DELETE Exclui do banco o produto com id correspondente ao enviado na url.
+ <br>
+<br>✅/pedidos
+<br>GET Retorna todos os pedidos já cadastrados.
+<br>POST Insere um novo pedido no banco.
+<br>/pedidos/{id}
+<br>GET Retorna um pedido de acordo com o id correspondente ao enviado na url.
+<br>PUT Edita o pedido com id correspondente ao enviado na url.
+<br>DELETE Exclui do banco o pedido com id correspondente ao enviado na url.
 
