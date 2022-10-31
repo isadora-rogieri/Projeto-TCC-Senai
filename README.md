@@ -18,8 +18,9 @@ ________________
 
 
 Com Aplicação em Java (API) é possível cadastrar, editar, deletar e listar usuários, produtos, pedidos e os itens de pedido.
-
+&nbsp;
 EndPoints (/api/hamburgueria)
+&nbsp;
 ✅/usuarios
 GET Retorna todos os usuários já cadastrados.
 POST Insere um novo usuário no banco.
@@ -27,7 +28,7 @@ POST Insere um novo usuário no banco.
 GET Retorna um usuário de acordo com o id correspondente ao enviado na url.
 PUT Edita o usuário com id correspondente ao enviado na url.
 DELETE Exclui do banco o usuário com id correspondente ao enviado na url.
-
+&nbsp;
 ✅/produtos
 GET Retorna todos os produtos já cadastrados.
 POST Insere um novo produto no banco.
@@ -35,7 +36,7 @@ POST Insere um novo produto no banco.
 GET Retorna um produto de acordo com o id correspondente ao enviado na url.
 PUT Edita o produto com id correspondente ao enviado na url.
 DELETE Exclui do banco o produto com id correspondente ao enviado na url.
-
+&nbsp;
 ✅/pedidos
 GET Retorna todos os pedidos já cadastrados.
 POST Insere um novo pedido no banco.
