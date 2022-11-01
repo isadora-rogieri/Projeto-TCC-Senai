@@ -17,7 +17,7 @@ O objetivo deste projeto é o desenvolvimento de um aplicativo para delivery de 
 ________________
 
 
-Com Aplicação em Java (API) é possível cadastrar, editar, deletar e listar usuários, produtos, pedidos e os itens de pedido.
+### Com Aplicação em Java (API) é possível cadastrar, editar, deletar e listar usuários, produtos, pedidos e os itens de pedido.
  <br>
 EndPoints (/api/hamburgueria)
  <br>
@@ -45,4 +45,16 @@ EndPoints (/api/hamburgueria)
 <br>GET Retorna um pedido de acordo com o id correspondente ao enviado na url.
 <br>PUT Edita o pedido com id correspondente ao enviado na url.
 <br>DELETE Exclui do banco o pedido com id correspondente ao enviado na url.
+
+<br>
+<br>
+____
+<br>
+<br>
+
+### Principais telas aplicação Android:
+
+
+![image](https://user-images.githubusercontent.com/89702490/199133657-3cd84285-46d4-454c-a79e-8b98b793beb3.png)
+![image](https://user-images.githubusercontent.com/89702490/199133682-4a9bbc32-f565-4bd5-b031-5c82dc31b515.png)
 
