@@ -92,7 +92,7 @@ public class CadastraProduto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String url = "http://000.000.00.000:8080/api/hamburgueria/produtos";
+                String url = "http://192.168.43.232:8080/api/hamburgueria/produtos";
                 JSONObject dadosEnvio = new JSONObject();
                 try {
 

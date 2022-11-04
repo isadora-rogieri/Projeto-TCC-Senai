@@ -39,10 +39,10 @@ public class ProdutoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity alterarProduto(@PathVariable("id") Integer id, @RequestBody Produto produto){
-        this.produtosService.atualizarProduto(id,produto);
-        ResponseEntity response = new ResponseEntity("Produto alterado", HttpStatus.OK);
-        return response;
+    public Produto alterarProduto(@PathVariable("id") Integer id, @RequestBody Produto produto){
+        
+        //ResponseEntity response = new ResponseEntity("Produto alterado", HttpStatus.OK);
+        return this.produtosService.atualizarProduto(id,produto);
     }
 
     @DeleteMapping(value="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

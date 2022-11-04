@@ -62,7 +62,7 @@ public void onBindViewHolder(@NonNull ListEditDelAdapter.ViewHolder holder, @Sup
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                montaAlert("excluir item", "deseja excluir ou editar?", produto.getId() , position);
+                montaAlert("Excluir item", "Você tem certeza que gostaria excluir ?", produto.getId() , position);
             }
         });
 }
@@ -123,10 +123,10 @@ class ViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
-        configAlert.setNeutralButton("Editar", new DialogInterface.OnClickListener() {
+        configAlert.setNeutralButton("Editar item", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                atualizarProduto(posicao,id);
             }
         });
 
@@ -143,7 +143,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
     //deletar um produto
     private void removerProduto(int id, int posicao){
 
-        String url = "http://000.000.00.000:8080/api/hamburgueria/produtos/" + id;
+        String url = "http://192.168.43.232:8080/api/hamburgueria/produtos/" + id;
 
 
         JsonObjectRequest configRequisicao = new JsonObjectRequest(Request.Method.DELETE,
@@ -178,13 +178,13 @@ class ViewHolder extends RecyclerView.ViewHolder {
         requisicao.add(configRequisicao);
     }
     //atualizar
-    private void atualizarProduto(int posicao){
+    private void atualizarProduto(int posicao, int id){
 
         Intent it = new Intent(context, TelaAtualizaProduto.class);
-        it.putExtra("id", listProduto.get(posicao).getId());
+        it.putExtra("id", id);
         it.putExtra("nome", listProduto.get(posicao).getNome());
-        it.putExtra("descricao", listProduto.get(posicao).getPreco());
-        it.putExtra("preco", listProduto.get(posicao).getDescricao());
+        it.putExtra("descricao", listProduto.get(posicao).getDescricao());
+        it.putExtra("preco", listProduto.get(posicao).getPreco());
         it.putExtra("byteImagem", listProduto.get(posicao).getByteImagem());
         context.startActivity(it);
     }

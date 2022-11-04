@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroudapp"
+    android:backgroundTintMode="screen"
     tools:context=".telas.TermoEInfoActivity">
 
     <View
@@ -108,43 +109,51 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="84dp"
-        android:background="#000000"
-        android:backgroundTint="#070707"
-        android:shadowColor="#101010"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFDFD"
+        android:shadowColor="#FFFFFF"
         android:text="Termos de uso e Política de Privacidade"
-        android:textColor="#1E1D1D"
+        android:textColor="#000000"
         android:textColorHint="#020202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider8" />
 
     <LinearLayout
-        android:layout_width="290dp"
-        android:layout_height="345dp"
+        android:layout_width="286dp"
+        android:layout_height="462dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="25dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#FDFDFD"
+            android:backgroundTint="#FBFBFB">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:background="#F6F6F6"
+                android:backgroundTint="#FFFDFD"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#020202"
-                    android:backgroundTint="#000000"
-                    android:shadowColor="#131313"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:foregroundTint="#CF1212"
+                    android:hyphenationFrequency="normal"
+                    android:shadowColor="#FDF9F9"
                     android:text="A Política de Privacidade destes TeC (“Política de Privacidade”) tem por objetivo explicar como a Louco pos Lanches Paulista pode coletar, guardar, processar, compartilhar, transferir e tratar os dados pessoais do Usuário (“Dados Pessoais”) durante a utilização da Plataforma. Esta Política de Privacidade aplica-se aos Dados Pessoais do Usuário quando visita, navega, utiliza e adquire conteúdos na Plataforma e não se aplica a sites, plataformas ou serviços que não sejam de titularidade ou controlados exclusivamente pela Loucos por Lanches Paulista incluindo sites ou serviços de outros Usuários, parceiros ou anunciantes da Plataforma.  Para os fins destes TeC, Dados Pessoais devem ser compreendidos como qualquer informação relacionada a pessoa natural ou jurídica identificada ou identificável, de acordo com a Lei nº. 13.709/2018 (Lei Geral de Proteção de Dados).  1.1.   COLETA E USO DE INFORMAÇÕES PESSOAIS  1.1.1.   A Louco por Lanches Paulista coleta todas as informações inseridas pelos Usuarios na Plataforma, tais como dados cadastrais. Em síntese, todas as informações coletadas são ativamente disponibilizadas pelos Usuários na utilização da Plataforma.  1.1.2.   O Usuário está ciente de que fornece informação de forma consciente e voluntária por meio de cadastro na Plataforma.  1.1.3.   Quando o Usuário realiza o cadastro e/ou preenche formulários oferecidos pela Loucos por Lanches Paulista inclusive nos sites por ela operados, determinados Dados Pessoais solicitados serão mantidos em sigilo e serão utilizadas apenas para o propósito que motivou o cadastro.  1.1.4.   A Loucos por Lanches Paulista  também poderá utilizar algumas tecnologias padrões para coletar informações sobre o Usuário, tais como cookies, pixel tags, beacons e local shared objects, de modo a melhorar sua experiência de navegação.  1.1.5.   As informações coletadas por meio da Plataforma são devidamente autorizadas pelos Usuários, os quais manifestam, desde já, o seu consentimento livre, expresso e informado com relação à coleta de tais informações, para fins do disposto no artigo 7º, inciso IX, da Lei 12.965/2014 (Marco Civil da Internet) e da Lei 13.709/2018 (Lei Geral de Proteção de Dados).   2.1.   UTILIZAÇÃO E TRATAMENTO DAS INFORMAÇÕES  2.1.1.    A Loucos por Lanches Paulista considera todas as informações coletadas por meio da Plataforma como confidenciais. Somente serão utilizadas as informações da forma aqui descritas e autorizadas por qualquer dos Usuários e somente sobre estes restará qualquer responsabilidade por sua utilização. Todas as informações cadastradas e coletadas na Plataforma são utilizadas para a execução das suas atividades, para melhorar a experiência de navegação dos Usuários na Plataforma, bem como para fins publicitários.  2.1.2.   Embora a Loucos por Lanches Paulista utilize medidas de segurança e monitore seu sistema para verificar vulnerabilidades e ataques para proteger seus Dados Pessoais contra divulgação não autorizada, mau uso ou alteração, o Usuário entende e concorda que não há garantias de que as informações não poderão ser acessadas, divulgadas, alteradas ou destruídas por violação de qualquer uma das proteções físicas, técnicas ou administrativas."
-                    android:textColor="#2C2A2A"
-                    android:textColorHint="#100F0F" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#050505" />
             </LinearLayout>
         </ScrollView>
 

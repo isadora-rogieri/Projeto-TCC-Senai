@@ -4,6 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroudapp"
     tools:context=".telas.TelaAtualizaProduto">
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="415dp"
+        android:layout_height="45dp"
+        android:background="#F31313"
+        android:backgroundTint="#F31313"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="415dp"
+        android:layout_height="55dp"
+        android:background="#F40C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textVNome"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:text="Nome"
+        android:textColor="#F11212"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEdit" />
+
+    <TextView
+        android:id="@+id/textVDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="32dp"
+        android:text="Descrição"
+        android:textColor="#F11212"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVNome" />
+
+    <TextView
+        android:id="@+id/textVPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        android:text="Preço"
+        android:textColor="#F11212"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVDescricao" />
+
+    <TextView
+        android:id="@+id/textVEdit"
+        android:layout_width="214dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="48dp"
+        android:text="EDITAR PRODUTO"
+        android:textColor="#F11212"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+    <Button
+        android:id="@+id/btEditarProduto"
+        android:layout_width="102dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="#F42424"
+        android:text="Salvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btNovaImagem" />
+
+    <Button
+        android:id="@+id/btNovaImagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#F42424"
+        android:text="Selecionar Imagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewEditProduto" />
+
+    <ImageView
+        android:id="@+id/imgViewEditProduto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/btNovaImagem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTextEditPreco"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/edTextEditNome"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVNome"
+        app:layout_constraintTop_toBottomOf="@+id/textVEdit" />
+
+    <EditText
+        android:id="@+id/edTextEditDescricao"
+        android:layout_width="166dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/edTextEditNome" />
+
+    <EditText
+        android:id="@+id/edTextEditPreco"
+        android:layout_width="154dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVPreco"
+        app:layout_constraintTop_toBottomOf="@+id/edTextEditDescricao" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,7 +52,7 @@ public class ListaProdutos extends AppCompatActivity {
             }
         });
 
-        String url = "http://000.000.000.000:8080/api/hamburgueria/produtos";
+        String url = "http://192.168.43.232:8080/api/hamburgueria/produtos";
 
         RequestQueue requisicao = Volley.newRequestQueue(ListaProdutos.this);
 
@@ -71,7 +71,6 @@ public class ListaProdutos extends AppCompatActivity {
                                 String nome = produto.getString("nome");
                                 double preco = produto.getDouble("preco");
                                 String descricao = produto.getString("descricao");
-                                //String caminhoImagem = produto.getString("caminhoImagem");
                                 String byteImagem = produto.getString("byteImagem");
 
                                 Produto p = new Produto(nome, preco, descricao, byteImagem);

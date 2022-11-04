@@ -25,7 +25,7 @@ public class Produto implements Serializable {
     protected String nome;
     @Column(nullable = false)
     @NotBlank(message = "Descrição obrigatório")
-    @Size(min = 5, max = 100)
+    @Size(min = 5, max = 250)
     protected String descricao;
 
     @Column(nullable = false)

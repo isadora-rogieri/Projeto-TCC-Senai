@@ -20,7 +20,7 @@ public class ProdutosService {
     public List<Produto> litarTodos() {
         return produtoRepository.findAll();
     }
-    public void atualizarProduto(Integer id, Produto produto){
+    public Produto atualizarProduto(Integer id, Produto produto){
         Produto produto1 = this.produtoRepository.findById(id).orElseThrow();
         produto1.setNome(produto.getNome());
         produto1.setDescricao(produto.getDescricao());
@@ -28,6 +28,7 @@ public class ProdutosService {
         produto1.setByteImagem(produto.getByteImagem());
 
         this.produtoRepository.save(produto1);
+        return produto1;
     }
 
     public void deletarProduto(Integer id){
