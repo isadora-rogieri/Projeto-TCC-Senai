@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -60,11 +61,14 @@ public class CadastraUsuario extends AppCompatActivity {
 
 
                 requisicao = Volley.newRequestQueue(CadastraUsuario.this);
-                String url = "http://192.168.0.14:8080/api/hamburgueria/usuarios";
+                String url = "http://192.168.43.232:8080/api/hamburgueria/usuarios";
 
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST,url,
-                        response -> Toast.makeText(CadastraUsuario.this, "Sucesso!", Toast.LENGTH_LONG).show(),
+                        response -> {
+                            Toast.makeText(CadastraUsuario.this, "Sucesso!", Toast.LENGTH_LONG).show();
+                            redirecionarProdutos();
+                        },
                         error -> Toast.makeText(CadastraUsuario.this, "Erro!", Toast.LENGTH_LONG).show()){
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Nullable
@@ -161,5 +165,10 @@ public class CadastraUsuario extends AppCompatActivity {
         cep = findViewById(R.id.edTCEP);
         senha = findViewById(R.id.edTSenha);
         btCadastrar = findViewById(R.id.btCadastrar);
+    }
+
+    private void redirecionarProdutos(){
+        Intent it = new Intent(CadastraUsuario.this, ListaProdutos.class);
+        startActivity(it);
     }
 }

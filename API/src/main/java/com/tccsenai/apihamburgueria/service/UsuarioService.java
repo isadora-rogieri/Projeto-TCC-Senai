@@ -33,7 +33,7 @@ public class UsuarioService {
         usuario.setBairro(usuarioDto.getBairro());
         usuario.setEmail(usuarioDto.getEmail());
         usuario.setTelefone(usuarioDto.getTelefone());
-        usuario.setDataNacimento(TrataStrings.converteData(usuarioDto.getDataNascimento()));
+        usuario.setDataNascimento(TrataStrings.converteData(usuarioDto.getDataNascimento()));
         usuario.setSenha(TrataStrings.criptografaSenha(usuarioDto.getSenha()));
         usuario.setNome(usuarioDto.getNome());
         usuario.setNumero(usuarioDto.getNumero());
@@ -71,5 +71,15 @@ public class UsuarioService {
 
     public Usuario buscaUsuarioById(Integer id) {
         return this.usuarioRepository.findOneById(id);
+    }
+
+
+    public Usuario login (String cpfUsuario, String senha){
+        Usuario u = this.usuarioRepository.findOneByCpf(cpfUsuario);
+        if (cpfUsuario.equals(u.getCpf()) && TrataStrings.criptografaSenha(senha).equals(u.getSenha())){
+            return u;
+        }else
+            return null;
+
     }
 }

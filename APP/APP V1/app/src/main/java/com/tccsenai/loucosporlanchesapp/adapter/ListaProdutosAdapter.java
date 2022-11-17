@@ -19,7 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tccsenai.loucosporlanchesapp.R;
 import com.tccsenai.loucosporlanchesapp.model.Produto;
 import com.tccsenai.loucosporlanchesapp.telas.Carrinho;
+import com.tccsenai.loucosporlanchesapp.telas.DetalhesProduto;
 import com.tccsenai.loucosporlanchesapp.telas.ListaProdutos;
+import com.tccsenai.loucosporlanchesapp.telas.TelaAtualizaProduto;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -30,6 +32,7 @@ public class ListaProdutosAdapter extends RecyclerView.Adapter<ListaProdutosAdap
 
     List<Produto> listProduto = new ArrayList<>();
     Context context;
+    View view;
 
 
     public ListaProdutosAdapter(Context context, List<Produto> listProduto) {
@@ -41,7 +44,7 @@ public class ListaProdutosAdapter extends RecyclerView.Adapter<ListaProdutosAdap
     @Override
     public ListaProdutosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item, parent, false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -50,9 +53,13 @@ public class ListaProdutosAdapter extends RecyclerView.Adapter<ListaProdutosAdap
     public void onBindViewHolder(@NonNull ListaProdutosAdapter.ViewHolder holder, int position) {
 
         Produto produto = listProduto.get(position);
-
         holder.vincula(produto);
-
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                detalhesProduto(produto.getId(), position);
+            }
+        });
 
     }
 
@@ -107,6 +114,17 @@ public class ListaProdutosAdapter extends RecyclerView.Adapter<ListaProdutosAdap
             return bitmap;
         }
 
+    }
+
+    private void detalhesProduto(int posicao, int id){
+
+        Intent it = new Intent(context, DetalhesProduto.class);
+        it.putExtra("id", id);
+        it.putExtra("nome", listProduto.get(posicao).getNome());
+        it.putExtra("descricao", listProduto.get(posicao).getDescricao());
+        it.putExtra("preco", listProduto.get(posicao).getPreco());
+        it.putExtra("byteImagem", listProduto.get(posicao).getByteImagem());
+        context.startActivity(it);
     }
 }
 

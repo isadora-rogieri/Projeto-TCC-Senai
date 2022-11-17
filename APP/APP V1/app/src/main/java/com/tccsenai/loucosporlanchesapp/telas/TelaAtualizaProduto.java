@@ -130,7 +130,6 @@ public class TelaAtualizaProduto extends AppCompatActivity {
 
     }
 
-
     private Bitmap converteImagem(String imagem){
         byte[] bytes= Base64.decode(imagem,Base64.DEFAULT);
         // Initialize bitmap

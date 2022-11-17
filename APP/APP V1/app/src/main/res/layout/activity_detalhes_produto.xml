@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroudapp"
-    tools:context=".telas.LoginActivity">
+    tools:context=".telas.DetalhesProduto">
+
 
     <Button
-        android:id="@+id/btDadosUser4"
+        android:id="@+id/btDadosUser7"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="92dp"
@@ -23,7 +24,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btListaProdutos4"
+        android:id="@+id/btListaProdutos7"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="258dp"
@@ -37,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btPedidos4"
+        android:id="@+id/btPedidos7"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="180dp"
@@ -52,7 +53,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btHome4"
+        android:id="@+id/btHome7"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
@@ -67,7 +68,7 @@
         tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btCarrinho4"
+        android:id="@+id/btCarrinho7"
         android:layout_width="63dp"
         android:layout_height="63dp"
         android:layout_marginStart="340dp"
@@ -80,6 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
+
 
     <View
         android:id="@+id/divider5"
@@ -102,59 +104,73 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edCPFLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="CPF"
-        android:inputType="number"
-        android:textColor="#F10E0E"
-        android:textColorHint="#F10E0E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <EditText
-        android:id="@+id/edSenhaLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="SENHA"
-        android:inputType="textPersonName|textWebPassword"
-        android:textColor="#F10E0E"
-        android:textColorHint="#F10E0E"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCPFLogin" />
-
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="207dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="104dp"
-        android:fontFamily="sans-serif"
-        android:text="ACESSE SUA CONTA"
-        android:textAlignment="center"
-        android:textColor="#FF0F0F"
+        android:id="@+id/textVDetNomeProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="87dp"
+        android:text="TextView"
+        android:textColor="#F31313"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
-    <Button
-        android:id="@+id/btlogin"
-        android:layout_width="115dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="68dp"
-        android:backgroundTint="#FF0F0F"
-        android:text="Acessar"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textVDetdescricaoProduto"
+        android:layout_width="189dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#F31313"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edSenhaLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/textVDetNomeProduto" />
+
+    <TextView
+        android:id="@+id/textVDetPrecoProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        android:textColor="#F31313"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textVDetdescricaoProduto" />
+
+    <ImageView
+        android:id="@+id/imgDetalhesProduto"
+        android:layout_width="199dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVDetPrecoProduto"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btDetalheAddCarrinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#F31313"
+        android:text="ADICIONAR NO CARRINHO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDetalhesProduto" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="252dp"
+        android:text="R$"
+        android:textColor="#F31313"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

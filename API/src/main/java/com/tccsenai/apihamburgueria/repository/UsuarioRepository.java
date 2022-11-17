@@ -9,4 +9,6 @@ public interface UsuarioRepository  extends JpaRepository<Usuario, Integer> {
     Usuario findOneById(Integer id);
 
 
+
+    Usuario findOneByCpf(String cpfUsuario);
 }

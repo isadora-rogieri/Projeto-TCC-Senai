@@ -51,6 +51,12 @@ public class UsuarioController {
         return response;
     }
 
+    @GetMapping("/login/{cpf}/{senha}")
+    public Usuario login(@PathVariable("cpf")String cpf, @PathVariable("senha") String senha){
+
+        return usuarioService.login(cpf,senha);
+    }
+
 
 }
 
