@@ -38,7 +38,7 @@ public class CadastraUsuario extends AppCompatActivity {
     int mes = calendario.get(Calendar.MONTH);
     int dia = calendario.get(Calendar.DAY_OF_MONTH);
 
-    Button btHome = findViewById(R.id.btHome2);
+    Button btHome;
 
 
 
@@ -176,6 +176,7 @@ public class CadastraUsuario extends AppCompatActivity {
         cep = findViewById(R.id.edTCEP);
         senha = findViewById(R.id.edTSenha);
         btCadastrar = findViewById(R.id.btCadastrar);
+        btHome = findViewById(R.id.btHome2);
     }
 
     //redirecionando para lista de produtos
