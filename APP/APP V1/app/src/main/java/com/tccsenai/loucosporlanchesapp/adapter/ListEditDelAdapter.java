@@ -177,7 +177,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
         RequestQueue requisicao = Volley.newRequestQueue(context);
         requisicao.add(configRequisicao);
     }
-    //atualizar
+    //enviando dados do produto para tela de editar
     private void atualizarProduto(int posicao, int id){
 
         Intent it = new Intent(context, TelaAtualizaProduto.class);

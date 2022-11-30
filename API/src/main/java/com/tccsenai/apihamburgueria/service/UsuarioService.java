@@ -49,7 +49,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public void atualizarUsuario(Integer id, UsuarioDto usuarioDto){
+    public Usuario atualizarUsuario(Integer id, UsuarioDto usuarioDto){
         Usuario usuario1 = this.usuarioRepository.findOneById(id);
         usuario1.setNome(usuarioDto.getNome());
         usuario1.setEmail(usuarioDto.getEmail());
@@ -61,7 +61,7 @@ public class UsuarioService {
         usuario1.setNumero(usuarioDto.getNumero());
         usuario1.setTelefone(usuarioDto.getTelefone());
 
-        this.usuarioRepository.save(usuario1);
+        return this.usuarioRepository.save(usuario1);
     }
 
     public void deletarUsuario(Integer id){

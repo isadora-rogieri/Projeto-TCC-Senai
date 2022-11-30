@@ -18,6 +18,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.tccsenai.loucosporlanchesapp.MainActivity;
 import com.tccsenai.loucosporlanchesapp.R;
 
 import java.util.Calendar;
@@ -37,6 +38,8 @@ public class CadastraUsuario extends AppCompatActivity {
     int mes = calendario.get(Calendar.MONTH);
     int dia = calendario.get(Calendar.DAY_OF_MONTH);
 
+    Button btHome = findViewById(R.id.btHome2);
+
 
 
     @Override
@@ -46,6 +49,14 @@ public class CadastraUsuario extends AppCompatActivity {
         getSupportActionBar().hide();
 
         InicicarComponentes();
+
+        btHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(CadastraUsuario.this, MainActivity.class);
+                startActivity(it);
+            }
+        });
 
 
         btCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -167,6 +178,7 @@ public class CadastraUsuario extends AppCompatActivity {
         btCadastrar = findViewById(R.id.btCadastrar);
     }
 
+    //redirecionando para lista de produtos
     private void redirecionarProdutos(){
         Intent it = new Intent(CadastraUsuario.this, ListaProdutos.class);
         startActivity(it);

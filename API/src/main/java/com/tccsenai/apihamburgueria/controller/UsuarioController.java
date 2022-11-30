@@ -38,10 +38,10 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity alterarUsuario(@PathVariable("id") Integer id, @RequestBody UsuarioDto usuarioDto){
-        this.usuarioService.atualizarUsuario(id,usuarioDto);
-        ResponseEntity response = new ResponseEntity("Usuario alterado", HttpStatus.OK);
-        return response;
+    public Usuario alterarUsuario(@PathVariable("id") Integer id, @RequestBody UsuarioDto usuarioDto){
+
+        Usuario user =  this.usuarioService.atualizarUsuario(id,usuarioDto);
+        return user;
     }
 
     @DeleteMapping("/{id}")

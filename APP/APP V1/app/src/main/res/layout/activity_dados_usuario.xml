@@ -33,7 +33,7 @@
         android:layout_width="283dp"
         android:layout_height="375dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider5">
@@ -233,7 +233,7 @@
         android:layout_width="151dp"
         android:layout_height="36dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="50dp"
         android:text="SEUS DADOS"
         android:textColor="#E30B0B"
         android:textSize="24sp"
@@ -243,14 +243,25 @@
 
     <Button
         android:id="@+id/btEditarDadosUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="46dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="#F42424"
         android:text="editar dados"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Button
+        android:id="@+id/btEditaSenhaUser"
+        android:layout_width="145dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#F42424"
+        android:text="editar senha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btEditarDadosUsuario" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

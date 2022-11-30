@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.tccsenai.loucosporlanchesapp.telas.CadastraProduto;
 import com.tccsenai.loucosporlanchesapp.telas.CadastraUsuario;
 import com.tccsenai.loucosporlanchesapp.telas.ListaProdutos;
 import com.tccsenai.loucosporlanchesapp.telas.LoginActivity;
@@ -49,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(it);
+            }
+        });
+
+        btUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(MainActivity.this, LoginActivity.class);

@@ -62,6 +62,7 @@ public class TelaAtualizaProduto extends AppCompatActivity {
         imgProduto.setImageBitmap(converteImagem(byteImagem));
 
 
+        //chamando o metodo para selecionar imagem
         btSelecionarImagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +71,7 @@ public class TelaAtualizaProduto extends AppCompatActivity {
             }
         });
 
+        //metodo para salvar produto no banco
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,12 +141,12 @@ public class TelaAtualizaProduto extends AppCompatActivity {
         return bitmap;
     }
 
+    //inserindo imagem da galeria no cadastro do produto
     @Override
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         super .onActivityResult(requestCode,resultCode , data);
         if (resultCode ==RESULT_OK &&  requestCode == 12) {
             try {
-                //((BitmapDrawable) imgProduto.getDrawable()).getBitmap().recycle();
                 fotoEscolhida = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
                 imgProduto.setImageBitmap(fotoEscolhida);
             } catch (IOException e) {

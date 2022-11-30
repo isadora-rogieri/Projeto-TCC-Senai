@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -43,6 +44,25 @@ public class ListaProdutos extends AppCompatActivity {
         setContentView(R.layout.activity_lista_produtos);
         getSupportActionBar().hide();
         FloatingActionButton adicionarNovoProduto = findViewById(R.id.floatBtCadastrarProd);
+        Button btHome = findViewById(R.id.btHome3);
+
+        Button btLogin = findViewById(R.id.btDadosUser3);
+
+        btHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(ListaProdutos.this, MainActivity.class);
+                startActivity(it);
+            }
+        });
+
+        btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(ListaProdutos.this, LoginActivity.class);
+                startActivity(it);
+            }
+        });
 
         adicionarNovoProduto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,10 +121,10 @@ public class ListaProdutos extends AppCompatActivity {
             }
         }
         );
-
         requisicao.add(config);
-
     }
+
+
 
 
 }

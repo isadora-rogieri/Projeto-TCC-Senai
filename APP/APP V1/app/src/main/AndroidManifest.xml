@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".telas.EditarDadosUsuario"
+            android:exported="false" />
+        <activity
             android:name=".telas.DadosUsuario"
             android:exported="false" />
         <activity

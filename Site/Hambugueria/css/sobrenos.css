@@ -3,12 +3,14 @@
 *{ /*redefinindo todos os elementos da página*/
     margin: 0;
     padding: 0;
-    
 }
 body{
     background-image: linear-gradient(to bottom, #3f4045, #3b3a40, #37343b, #332f35, #b00f0f);
     min-height: 100vh; 
-
+}
+.logo img {
+    height: 70px;
+    border-radius: 50px;
 }
 
 header{    
@@ -83,12 +85,11 @@ border: 1px solid whitesmoke;
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-    div {
-        background: rgb(15, 243, 64);
+   /* div {
+        background: rgb(15, 243, 64);*/
     }
     .texto-1 h4{
         margin-left: 40px;
-
     }
     .texto-1{   
         width: 47%;
@@ -102,10 +103,7 @@ border: 1px solid whitesmoke;
         width: 50vh;
         height: 50vh;
         margin-left: 7rem;
-        
-       
-        }
-
+     }
         .imagem-2 img{
         width: 450px;
         height: 450px;
@@ -113,17 +111,14 @@ border: 1px solid whitesmoke;
         border-radius: 25px;
         border: 1px solid whitesmoke;
         }
-}
 
 @media (min-width: 793px) and (max-width: 1200px) {
-  
-    div {
-        background: rgb(243, 15, 15);
-    }
 
+    /*div {
+        background: rgb(243, 15, 15);
+    }*/
     .texto-1 h4{
         margin-left: 40px;
-
     }
     .texto-1{   
         width: 47%;
@@ -137,9 +132,7 @@ border: 1px solid whitesmoke;
         width: 30vh;
         height: 30vh;
         margin-left: 9rem;
-       
-        }
-
+    }
         .imagem-2 img{
         width: 255px;
         height: 255px;
@@ -147,14 +140,12 @@ border: 1px solid whitesmoke;
         border-radius: 25px;
         border: 1px solid whitesmoke;
         }
-}
-
+    }
 @media (min-width: 620px) and (max-width: 793px) {
     
-    div {
+   /* div {
         background: rgb(0, 0, 0);
-    }
-
+    }*/
     .texto-1 h4{
         margin-left: 40px;
 
@@ -171,11 +162,8 @@ border: 1px solid whitesmoke;
         width: 18vh;
         height: 18vh;
         margin-left: 5rem;
-       
         margin-right: 20px;
-       
         }
-
         .imagem-2 img{
         width: 190px;
         height: 190px;
@@ -185,14 +173,11 @@ border: 1px solid whitesmoke;
         border: 1px solid whitesmoke;
         }
 }
-
-
 @media (min-width: 0px) and (max-width: 620px) {
   
-    div {
+  /*  div {
         background: rgb(17, 0, 255);
-    }
-
+    }*/
     .texto-1 h4{
         margin-left: 40px;
         font-size: 30px;
@@ -210,10 +195,7 @@ border: 1px solid whitesmoke;
         width: 30vh;
         height: 28vh;
         margin-left: 1rem;
-     
-       
         }
-
         .imagem-2 img{
         width: 200px;
         height: 200px;
@@ -222,6 +204,9 @@ border: 1px solid whitesmoke;
         border-radius: 25px;
         border: 1px solid whitesmoke;
         }
+        a{
+            font-size: 18px;
+        }  
 }
 
 

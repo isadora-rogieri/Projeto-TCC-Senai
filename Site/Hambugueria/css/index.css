@@ -9,6 +9,12 @@ body{
     background-image: linear-gradient(to bottom, #3f4045, #3b3a40, #37343b, #332f35, #30292f);
     min-height: 100vh;  
 }
+
+.logo img {
+    height: 70px;
+    border-radius: 50px;
+}
+
 header{    
     backdrop-filter: blur(8px);
 }
@@ -207,7 +213,7 @@ font-family: 'Bebas Neue', cursive;
     }
    
 
-    @media (min-width: 0px) and (max-width: 599px) {
+    @media (min-width: 430px) and (max-width: 599px) {
   
         /*div {
             background: rgb(247, 150, 5);

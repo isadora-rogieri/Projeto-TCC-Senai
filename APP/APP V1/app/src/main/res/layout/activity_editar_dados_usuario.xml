@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroudapp"
+    tools:context=".telas.EditarDadosUsuario">
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="415dp"
+        android:layout_height="45dp"
+        android:background="#F31313"
+        android:backgroundTint="#F31313"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="415dp"
+        android:layout_height="55dp"
+        android:background="#F40C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textVEditUser"
+        android:layout_width="199dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Editar Dados"
+        android:textColor="#F11212"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+    <TextView
+        android:id="@+id/textVNomeUser"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:text="Nome"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditNomeUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVNomeUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVEmailUser"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="72dp"
+        android:text="Email"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditEmailUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVEmailUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditNumeroUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="220dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVNumeroUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditEnderecoUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVEnderecoUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVNumeroUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="224dp"
+        android:text="Número"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditTelefoneUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVTelefoneUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditBairroUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="270dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVBairroUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVEnderecoUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="172dp"
+        android:text="Endereço"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVTelefoneUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="124dp"
+        android:text="Telefone"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVBairroUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="272dp"
+        android:text="Bairro"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditCepUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="316dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVCepUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVCepUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="320dp"
+        android:text="CEP"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <EditText
+        android:id="@+id/edTextEditComplementoUser"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="428dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVComplementoUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVComplementoUser"
+        android:layout_width="118dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="428dp"
+        android:text="Complemento"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <Button
+        android:id="@+id/btEditarDadosUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#F11212"
+        android:text="Salvar Alterações"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTextEditComplementoUser" />
+    <EditText
+        android:id="@+id/edTextEditCidadeUser"
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="372dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#F11212"
+        android:textColorHint="#F11212"
+        app:layout_constraintStart_toEndOf="@+id/textVCidadeUser"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+    <TextView
+        android:id="@+id/textVCidadeUser"
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="372dp"
+        android:text="Cidade"
+        android:textColor="#F11212"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVEditUser" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

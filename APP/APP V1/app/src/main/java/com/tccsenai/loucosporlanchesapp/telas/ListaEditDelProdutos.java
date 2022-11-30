@@ -31,6 +31,7 @@ public class ListaEditDelProdutos extends AppCompatActivity {
     List<Produto> listaProdutos = new ArrayList<>();
 
 
+    //fazendo GET dos produtos da API
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,11 +91,5 @@ public class ListaEditDelProdutos extends AppCompatActivity {
         requisicao.add(config);
 
     }
-
-
-
-
-
-
 
 }

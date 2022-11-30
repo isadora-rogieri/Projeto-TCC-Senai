@@ -4,11 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
+    list-style: none;
 }
 body{
     background-image: linear-gradient(to bottom, #3f4045, #3b3a40, #37343b, #332f35, #30292f);
     min-height: 100vh;  
 }
+.logo img {
+    height: 70px;
+    border-radius: 50px;
+}
+
 header{    
     backdrop-filter: blur(8px);
 }
@@ -77,23 +83,28 @@ a{
 .lanches{
     width: 500px;    
     display: flex;   
-    align-items: center;    
+    align-items: center;
 }
-
-.lanches ul li{
+.lanches ul{
     list-style: none;
     text-align: left;
-    
+}
+.lanches li{
+   
+    list-style: none;
+    text-align: left;
 }
 .lanches img{
-    border-radius: 10px;
-    align-items: right;
-   margin-left: 200px;
+  border-radius: 8px;
+   margin-left: 60px;
+   height: 80px;
+   width: 80px;
 }
 .lanches p{
     color:white;
-   
-    padding:20px;
+    margin-top: 5px;
+    padding:18px;
+    margin-left: 30px;
     font-size: 20px;
 }
 /*final lanche*/
@@ -101,23 +112,29 @@ a{
 .porcaes{
     width: 500px;    
     display: flex;   
-    align-items: center;    
+    align-items: center;   
 }
-.porcoes ul li{
+.porcaes ul{
+    list-style: none;
+    text-align: left;
+}
+.porcaes li{
+   
     list-style: none;
     text-align: left;
 }
 .porcaes img{
-    border-radius: 10px;
-    align-items: right;
-    margin-left: 200px;
-
+    border-radius: 8px;
+    margin-left: 60px;
+    height: 80px;
+    width: 80px;
 }
 .porcaes p{
     color:white;
-    padding:20px;
+    margin-top: 5px;
+    padding:18px;
+    margin-left: 30px;
     font-size: 20px;
-    
 }
   /*final porçoes*/
 
@@ -141,4 +158,321 @@ a{
 }
   /*final bebidas*/
 
-  
+  @media (min-width: 1000px) and (max-width: 1700px) {
+    
+  /* div{ 
+        background: rgb(200, 255, 0);
+    }
+    
+    .conteudo {
+ 
+        background: violet;
+    }*/
+    .porcaes{
+        width: 380px;    
+        display: flex;   
+        align-items: center;   
+    }
+    
+    .lanches{
+        width: 380px;    
+        display: flex;   
+        align-items: center;  
+    }
+    .porcaes img{
+        height: 69px;
+        width: 69px;
+    }
+    .bebidas{
+        width: 380px;    
+        display: flex;   
+        align-items: center; 
+    }
+  }
+
+  @media (min-width: 1050px) and (max-width: 1390px) {
+    
+  /*  div{ 
+        background: rgb(0, 174, 255);
+    }
+    
+    .conteudo {
+        background: violet;
+    }*/
+    .conteudo ul{
+        /*background: rgb(31, 31, 31);*/
+        width: 250px;
+        margin-left: 15px;
+    }
+
+    
+    .container .box .conteudo h2{
+        font-size: 20px;
+    }
+    .porcaes{
+        width: 280px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .porcaes p{
+        font-size: 17px;
+    }
+    .lanches{
+        width: 280px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .lanches p{
+        font-size: 17px;
+    }
+    .bebidas{
+        width: 280px;    
+        display: flex;   
+        align-items: center;  
+    }
+
+  }
+
+  @media (min-width: 700px) and (max-width: 1050px) {
+    
+   /* div{ 
+        background: rgb(255, 0, 0);
+    }
+    .conteudo {
+        background: rgb(159, 130, 238);
+    }*/
+    
+    .conteudo ul{
+       /* background: rgb(31, 31, 31);*/
+        width: 250px;
+    }
+    
+    .container .box .conteudo h2{
+        font-size: 20px;
+    }
+    
+ /*----------------------------------------------------*/   
+    .porcaes{
+        width: 180px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .porcaes p{
+        font-size: 10px;
+    }
+
+    .porcaes li{
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+
+    .porcaes img{
+        border-radius: 8px;
+        margin-left: 60px;
+        height: 70px;
+        width: 70px;
+    }
+/*-------------------------------------------------------------------------*/
+    .lanches{
+        width: 180px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .lanches p{
+        font-size: 10px;
+    }
+
+   
+    .lanches li{
+       
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+    
+    .lanches img{
+        border-radius: 8px;
+        margin-left: 60px;
+        height: 70px;
+        width: 70px;
+    }
+    /*----------------------------------------*/
+    .bebidas{
+        width: 180px;    
+        display: flex;   
+        align-items: center;  
+    }
+    .bebidas img{
+        border-radius: 8px;
+        margin-left: 30px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 700px) {
+    
+    /*div{ 
+        background: rgb(8, 207, 58);
+    }
+    .conteudo {
+        background: rgb(14, 30, 172);
+    }*/
+    
+    .conteudo ul{
+        /*background: rgb(31, 31, 31);*/
+        width: 250px;
+    }
+    .conteudo img{
+        width: 40px;
+    }
+    .container .box .conteudo h2{
+        font-size: 20px;
+    }
+    
+ /*----------------------------------------------------*/   
+    .porcaes{
+        width: 150px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .porcaes p{
+        font-size: 10px;
+    }
+
+    .porcaes li{
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+
+    .porcaes img{
+        border-radius: 8px;
+        margin-left: 60px;
+        height: 50px;
+        width: 50px;
+    }
+/*-------------------------------------------------------------------------*/
+    .lanches{
+        width: 150px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .lanches p{
+        font-size: 10px;
+    }
+
+   
+    .lanches li{
+       
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+    
+    .lanches img{
+        border-radius: 8px;
+        margin-left: 60px;
+        height: 50px;
+        width: 50px;
+    }
+    /*----------------------------------------*/
+    .bebidas{
+        width: 150px;    
+        display: flex;   
+        align-items: center;  
+    }
+    .bebidas img{
+        border-radius: 8px;
+        margin-left: 30px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 639px) {
+    
+   /* div{ 
+        background: rgb(199, 252, 8);
+    }
+    .conteudo {
+        background: rgb(255, 156, 63);
+    }*/
+
+    .menu{    
+        font-size: 15px;
+       
+    }
+    .conteudo ul{
+       /* background: rgb(31, 31, 31);*/
+        width: 118px;
+        
+    }
+    .conteudo img{
+        width: 30px;
+    }
+    .container .box .conteudo h2{
+        font-size: 15px;
+    }
+    
+ /*----------------------------------------------------*/   
+    .porcaes{
+        width: 110px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .porcaes p{
+        font-size: 9px;
+        margin-left: 5px;
+    }
+
+    .porcaes li{
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+
+    .porcaes img{
+        border-radius: 8px;
+        margin-left: 35px;
+        height: 50px;
+        width: 50px;
+        
+    }
+/*-------------------------------------------------------------------------*/
+    .lanches{
+        width: 110px;    
+        display: flex;   
+        align-items: center;   
+    }
+    .lanches p{
+        font-size: 9px;
+        margin-left: 5px;
+    }
+
+    .lanches li{
+        list-style: none;
+        text-align: left;
+        margin-top: 28px;
+    }
+    
+    .lanches img{
+        border-radius: 8px;
+        margin-left: 35px;
+        height: 50px;
+        width: 50px;
+    }
+    /*----------------------------------------*/
+    .bebidas{
+        width: 110px;    
+        display: flex;   
+        align-items: center;  
+    }
+    .bebidas img{
+        border-radius: 8px;
+        margin-left: 20px;
+        height: 40px;
+        width: 40px;
+    }
+}

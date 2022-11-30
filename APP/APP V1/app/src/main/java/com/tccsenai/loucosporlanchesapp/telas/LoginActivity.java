@@ -1,41 +1,28 @@
 package com.tccsenai.loucosporlanchesapp.telas;
 
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
-import com.tccsenai.loucosporlanchesapp.MainActivity;
 import com.tccsenai.loucosporlanchesapp.R;
-import com.tccsenai.loucosporlanchesapp.model.Produto;
 import com.tccsenai.loucosporlanchesapp.model.Usuario;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.util.Map;
-
 public class LoginActivity extends AppCompatActivity {
-    String cpf, senha;
+
     Usuario u;
 
 
@@ -50,9 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         Button btLogar = findViewById(R.id.btlogin);
         Button btProdutos = findViewById(R.id.btListaProdutos4);
         Button bthome = findViewById(R.id.btHome4);
-
-        //cpf = edCPF.getText().toString();
-        //senha = edSenha.getText().toString();
 
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,11 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
                                 }
-
                             }
-
 
                         }, new Response.ErrorListener() {
                     @Override
@@ -138,12 +119,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    //enviando dados do usuario para tela de dados
     private void dadosUsuario(Usuario u) {
         Intent it = new Intent(this, DadosUsuario.class);
         it.putExtra("id", u.getId());
         it.putExtra("nome", u.getNome());
         it.putExtra("cpf", u.getCpf());
         it.putExtra("email", u.getEmail());
+        it.putExtra("senha", u.getSenha());
         it.putExtra("telefone", u.getTelefone());
         it.putExtra("dataNascimento", u.getDataNascimento());
         it.putExtra("endereco", u.getEndereco());
@@ -152,8 +135,6 @@ public class LoginActivity extends AppCompatActivity {
         it.putExtra("bairro", u.getBairro());
         it.putExtra("cep", u.getCep());
         it.putExtra("cidade", u.getCidade());
-
-
         startActivity(it);
     }
 
