@@ -108,11 +108,7 @@ public class CadastraUsuario extends AppCompatActivity {
 
                 requisicao = Volley.newRequestQueue(CadastraUsuario.this);
                 requisicao.add(stringRequest);
-
-
             }
-
-
         });
 
     }
@@ -147,12 +143,14 @@ public class CadastraUsuario extends AppCompatActivity {
                                         //Escrever a data no EditText
                                         if(month<10) {
                                             if (dayOfMonth < 10) {
-                                                dataNascimento.setText("0" + dayOfMonth + "/0" + month + "/" + year);
+                                                dataNascimento.setText("0" + dayOfMonth + "/0" + (month+1) + "/" + year);
                                             } else {
-                                                dataNascimento.setText(dayOfMonth + "/0" + month + "/" + year);
+                                                dataNascimento.setText(dayOfMonth + "/0" + (month+1) + "/" + year);
                                             }
+                                        } else if (dayOfMonth < 10){
+                                            dataNascimento.setText("0" + dayOfMonth + "/" + (month+1) + "/" + year);
                                         } else {
-                                            dataNascimento.setText(dayOfMonth + "/" + month + "/" + year);
+                                            dataNascimento.setText(dayOfMonth + "/" + (month+1) + "/" + year);
                                         }
 
                                     }
