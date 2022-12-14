@@ -3,6 +3,7 @@ package com.tccsenai.apihamburgueria.controller;
 import com.tccsenai.apihamburgueria.dto.PedidoDto;
 import com.tccsenai.apihamburgueria.enums.StatusPedido;
 import com.tccsenai.apihamburgueria.model.Pedido;
+import com.tccsenai.apihamburgueria.service.EnvioEmailService;
 import com.tccsenai.apihamburgueria.service.ItemPedidoService;
 import com.tccsenai.apihamburgueria.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -23,6 +25,9 @@ public class PedidoController {
     @Autowired
     ItemPedidoService itemPedidoService;
 
+    @Autowired
+    EnvioEmailService envioEmailService;
+
     @GetMapping
     public List<Pedido> getPedidos(){
         return pedidoService.listarTodos();
@@ -34,9 +39,10 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity inserir(@Valid @RequestBody PedidoDto dto) {
+    public ResponseEntity inserir(@Valid @RequestBody PedidoDto dto) throws MessagingException {
         Pedido pedido = pedidoService.fromDto(dto);
         pedidoService.inserir(pedido);
+        envioEmailService.enviaEmail(pedido);
 
         return  new ResponseEntity("Pedido Criado", HttpStatus.OK);
     }
